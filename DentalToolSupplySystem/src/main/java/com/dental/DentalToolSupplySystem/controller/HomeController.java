@@ -3,6 +3,10 @@ package com.dental.DentalToolSupplySystem.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0b2513c378a25afc071a765509c8acb26184d8ee
 @Controller
 public class HomeController {
 	
