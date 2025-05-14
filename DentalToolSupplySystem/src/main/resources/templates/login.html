@@ -1,11 +1,11 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hygiene Dental Equipment-Login</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" th:href="@{css/style.css}" />
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -15,15 +15,9 @@
   <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-  <style>
-    .btn{
-       background-color: #007777;
-    }
-  </style>
-
 
 </head>
-</head>
+
 <body>
 
   <!-- Top Bar -->
@@ -40,8 +34,8 @@
       <span><i class="fas fa-map-marker-alt"></i>Hassan,Karnataka</span>
       <span><i class="fas fa-truck"></i> Track Order</span>
       <span><i class="fas fa-user"></i> 
-        <a href="./login.html">Log In</a> | 
-        <a href="./register.html">Sign Up</a>
+        <a th:href="@{/login}">Log In</a> | 
+        <a th:href="@{/register}">Sign Up</a>
       </span>
     </div>
     
@@ -56,43 +50,47 @@
       <input type="text" placeholder="Search" />
       <button><i class="fas fa-search"></i> Search</button>
     </div>
-     <a href="./cart.html" class="cart text-decoration-none text-dark">
-    <i class="fas fa-shopping-cart"></i> Cart
-  </a>
+     <a th:href="@{/cart}" class="text-decoration-none text-dark">
+	  <div class="cart">
+	    <i class="fas fa-shopping-cart"></i> Cart
+	  </div>
+	</a>
   </header>
 
   <!-- Navigation -->
   <nav>
     <ul>
       <li class="nav-item">
-        <a class="nav-link" href="./index.html">HOME</a>
+        <a class="nav-link" th:href="@{/}">HOME</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="./categories.html">CATEGORIES</a>
+          <a class="nav-link" th:href="@{/categories}">CATEGORIES</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="./products.html">PRODUCTS</a>
+          <a class="nav-link" th:href="@{/products}">PRODUCTS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./cart.html">CART</a>
+        <a class="nav-link" th:href="@{/cart}">CART</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./checkouts.html">CHECKOUTS</a>
+        <a class="nav-link" th:href="@{/checkouts}">CHECKOUTS</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="./about.html">ABOUT US</a>
+          <a class="nav-link" th:href="@{/about}">ABOUT US</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="./contact.html">CONTACT</a>
+          <a class="nav-link" th:href="@{/contact}">CONTACT</a>
       </li>
     </ul>
   </nav>
+
+
 
 <!-- Breadcrumb (Flush Left under navbar) -->
 <div style="width: 100%; padding: 10px 20px; margin-top: 5px;">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb mb-0" style="margin: 0; padding: 0; font-size: 16px;">
-      <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+      <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
       <li class="breadcrumb-item active" aria-current="page">Login</li>
     </ol>
   </nav>
@@ -108,7 +106,8 @@
       <!-- Bold Login Header -->
       <h2 class="text-center mb-4 fw-bold">Login account</h2>
 
-      <form>
+     <form th:action="@{/login}" method="post">
+
         <!-- Email Input -->
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
@@ -125,20 +124,35 @@
             </span>
           </div>
         </div>
+        
+        <!-- Role Selection -->
+		<div class="mb-3">
+		  <label for="role" class="form-label">Select Role</label>
+		  <select class="form-select" id="role" name="role" required>
+		    <option value="" disabled selected>-- Choose your role --</option>
+		    <option value="ADMIN">Admin</option>
+		    <option value="SUPPLIER">Supplier</option>
+		    <option value="CUSTOMER">Customer</option>
+		    <option value="TECHNICIAN">Technician</option>
+		    <option value="SALES_MANAGER">Sales Manager</option>
+		    <option value="WAREHOUSE">Warehouse Staff</option>
+		  </select>
+		</div>
+        
 
         <!-- Sign In Button -->
         <div class="d-grid gap-2 mb-3">
-          <button type="submit" class="btn btn-dark">SIGN IN</button>
+          <button type="submit" class="btn btn-custom">SIGN IN</button>
         </div>
 
         <!-- Forgot Password Link -->
         <div class="text-end mb-4">
-          <a href="./forgetpassword.html" class="text-decoration-underline text-dark">Forgot your password?</a>
+          <a th:href="@{/forgetpassword}" class="text-decoration-underline text-dark">Forgot your password?</a>
         </div>
 
         <!-- Sign Up Link -->
         <div class="text-center">
-          <p>Don't have an account? <a href="./register.html" class="text-decoration-underline">Create an account</a></p>
+          <p>Don't have an account? <a th:href="@{/register}" class="text-decoration-underline">Create an account</a></p>
         </div>
 
       </form>
@@ -156,31 +170,31 @@
       <!-- Quick Links -->
       <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 font-weight-bold">Quick Links</h5>
-        <p><a href="./index.html" class="text-white text-decoration-none">Home</a></p>
-        <p><a href="./products.html" class="text-white text-decoration-none">Products</a></p>
-        <p><a href="./categories.html" class="text-white text-decoration-none">Categories</a></p>
-        <p><a href="./about.html" class="text-white text-decoration-none">About Us</a></p>
-        <p><a href="./contact.html" class="text-white text-decoration-none">Contact</a></p>
+        <p><a th:href="@{/index}" class="text-white text-decoration-none">Home</a></p>
+        <p><a th:href="@{products}" class="text-white text-decoration-none">Products</a></p>
+        <p><a th:href="@{/categories}" class="text-white text-decoration-none">Categories</a></p>
+        <p><a th:href="@{/about}" class="text-white text-decoration-none">About Us</a></p>
+        <p><a th:href="@{/contact}" class="text-white text-decoration-none">Contact</a></p>
       </div>
 
       <!-- Services -->
       <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 font-weight-bold">Services</h5>
-        <p><a href="./services/repair.html" class="text-white text-decoration-none">Equipment Repair</a></p>
-        <p><a href="./services/calibration.html" class="text-white text-decoration-none">Tool Calibration</a></p>
-        <p><a href="./services/training.html" class="text-white text-decoration-none">Staff Training</a></p>
-        <p><a href="./services/consulting.html" class="text-white text-decoration-none">Dental Clinic Consulting</a></p>
-        <p><a href="./services/maintenance.html" class="text-white text-decoration-none">Maintenance Plans</a></p>
+        <p><a th:href="@{/services/repair}" class="text-white text-decoration-none">Equipment Repair</a></p>
+        <p><a th:href="@{/services/calibration}" class="text-white text-decoration-none">Tool Calibration</a></p>
+        <p><a th:href="@{/services/training}" class="text-white text-decoration-none">Staff Training</a></p>
+        <p><a th:href="@{/services/consulting}" class="text-white text-decoration-none">Dental Clinic Consulting</a></p>
+        <p><a th:href="@{/services/maintenance}" class="text-white text-decoration-none">Maintenance Plans</a></p>
       </div>
 
       <!-- Other Links -->
       <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 font-weight-bold">Other Links</h5>
-        <p><a href="./blog.html" class="text-white text-decoration-none">Blog</a></p>
-        <p><a href="./testimonials.html" class="text-white text-decoration-none">Testimonials</a></p>
-        <p><a href="./privacy.html" class="text-white text-decoration-none">Privacy Policy</a></p>
-        <p><a href="./refund-policy.html" class="text-white text-decoration-none">Return and Refund Policy</a></p>
-        <p><a href="./terms.html" class="text-white text-decoration-none">Terms of Service</a></p>
+        <p><a th:href="@{/blog}" class="text-white text-decoration-none">Blog</a></p>
+        <p><a th:href="@{/testimonials}" class="text-white text-decoration-none">Testimonials</a></p>
+        <p><a th:href="@{/privacy}" class="text-white text-decoration-none">Privacy Policy</a></p>
+        <p><a th:href="@{/refund-policy}" class="text-white text-decoration-none">Return and Refund Policy</a></p>
+        <p><a th:href="@{/terms}" class="text-white text-decoration-none">Terms of Service</a></p>
       </div>
 
       <!-- Contact Info -->
@@ -210,23 +224,6 @@
     </div>
   </div>
 </footer>
-
-<!-- Toggle Password Show/Hide Script -->
-<script>
-  function togglePassword() {
-    const passwordInput = document.getElementById('password');
-    const icon = document.getElementById('togglePasswordIcon');
-    if (passwordInput.type === 'password') {
-      passwordInput.type = 'text';
-      icon.classList.remove('fa-eye');
-      icon.classList.add('fa-eye-slash');
-    } else {
-      passwordInput.type = 'password';
-      icon.classList.remove('fa-eye-slash');
-      icon.classList.add('fa-eye');
-    }
-  }
-</script>
 
 
 
