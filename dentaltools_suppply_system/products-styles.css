@@ -7,7 +7,7 @@
     --accent-color: #5e35b1;
     --light-lavender: #f3effa;
     --medium-lavender: #d1c4e9;
-    --dark-lavender: #7e57c2;
+    --dark-lavender: #8ff6e5;
     --text-color: #333;
     --light-text: #666;
     --white: #fff;
@@ -22,7 +22,7 @@
 
 /* Products Hero Section */
 .products-hero {
-    background-image: linear-gradient(to right, rgba(142, 109, 189, 0.9), rgba(94, 53, 177, 0.8)),
+    background-image: linear-gradient(to right, rgba(166, 236, 181, 0.9), rgba(160, 243, 200, 0.8)),
         url("/placeholder.svg?height=600&width=1200");
     background-size: cover;
     background-position: center;
