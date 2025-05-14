@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hygiene Dental Equipment-Checkouts</title>
-  ic
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" th:href="@{css/checkouts_style.css}" />
+  <link rel="stylesheet" th:href="@{css/style.css}" />
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -17,7 +18,7 @@
 
 
 </head>
-</head>
+
 <body>
 
   <!-- Top Bar -->
@@ -34,8 +35,8 @@
       <span><i class="fas fa-map-marker-alt"></i>Hassan,Karnataka</span>
       <span><i class="fas fa-truck"></i> Track Order</span>
       <span><i class="fas fa-user"></i> 
-        <a href="./login.html">Log In</a> | 
-        <a href="./register.html">Sign Up</a>
+        <a th:href="@{/login}">Log In</a> | 
+        <a th:href="@{/register}">Sign Up</a>
       </span>
     </div>
     
@@ -50,37 +51,456 @@
       <input type="text" placeholder="Search" />
       <button><i class="fas fa-search"></i> Search</button>
     </div>
-     <a href="./cart.html" class="cart text-decoration-none text-dark">
-    <i class="fas fa-shopping-cart"></i> Cart
-  </a>
+      <a th:href="@{/cart}" class="text-decoration-none text-dark">
+	  <div class="cart">
+	    <i class="fas fa-shopping-cart"></i> Cart
+	  </div>
+	</a>
   </header>
 
   <!-- Navigation -->
   <nav>
     <ul>
       <li class="nav-item">
-        <a class="nav-link" href="./index.html">HOME</a>
+        <a class="nav-link" th:href="@{/}">HOME</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="./categories.html">CATEGORIES</a>
+          <a class="nav-link" th:href="@{/categories}">CATEGORIES</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="./products.html">PRODUCTS</a>
+          <a class="nav-link" th:href="@{/products}">PRODUCTS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./cart.html">CART</a>
+        <a class="nav-link" th:href="@{/cart}">CART</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./checkouts.html">CHECKOUTS</a>
+        <a class="nav-link" th:href="@{/checkouts}">CHECKOUTS</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="./about.html">ABOUT US</a>
+          <a class="nav-link" th:href="@{/about}">ABOUT US</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="./contact.html">CONTACT</a>
+          <a class="nav-link" th:href="@{/contact}">CONTACT</a>
       </li>
     </ul>
   </nav>
+
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Checkout</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="cart.html">Cart</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Checkout</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="checkout-section">
+    <div class="container">
+      <div class="checkout-progress">
+        <div class="progress-step active">
+          <div class="step-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <div class="step-label">Cart</div>
+        </div>
+        <div class="progress-line active"></div>
+        <div class="progress-step active">
+          <div class="step-icon">
+            <i class="fas fa-address-card"></i>
+          </div>
+          <div class="step-label">Information</div>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step">
+          <div class="step-icon">
+            <i class="fas fa-credit-card"></i>
+          </div>
+          <div class="step-label">Payment</div>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step">
+          <div class="step-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div class="step-label">Confirmation</div>
+        </div>
+      </div>
+
+      <div class="checkout-container">
+        <div class="checkout-form">
+          <form id="checkout-form">
+            <!-- Billing Information -->
+            <div class="form-section">
+              <h2>Billing Information</h2>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="billing-first-name">First Name <span class="required">*</span></label>
+                  <input type="text" id="billing-first-name" name="billing-first-name" required>
+                </div>
+                <div class="form-group">
+                  <label for="billing-last-name">Last Name <span class="required">*</span></label>
+                  <input type="text" id="billing-last-name" name="billing-last-name" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="billing-company">Company Name (Optional)</label>
+                <input type="text" id="billing-company" name="billing-company">
+              </div>
+              <div class="form-group">
+                <label for="billing-address1">Address Line 1 <span class="required">*</span></label>
+                <input type="text" id="billing-address1" name="billing-address1" required>
+              </div>
+              <div class="form-group">
+                <label for="billing-address2">Address Line 2 (Optional)</label>
+                <input type="text" id="billing-address2" name="billing-address2">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="billing-city">City <span class="required">*</span></label>
+                  <input type="text" id="billing-city" name="billing-city" required>
+                </div>
+                <div class="form-group">
+                  <label for="billing-state">State/Province <span class="required">*</span></label>
+                  <input type="text" id="billing-state" name="billing-state" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="billing-zip">ZIP/Postal Code <span class="required">*</span></label>
+                  <input type="text" id="billing-zip" name="billing-zip" required>
+                </div>
+                <div class="form-group">
+                  <label for="billing-country">Country <span class="required">*</span></label>
+                  <select id="billing-country" name="billing-country" required>
+                    <option value="">Select Country</option>
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="AU">Australia</option>
+                    <option value="DE">Germany</option>
+                    <option value="FR">France</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="billing-email">Email Address <span class="required">*</span></label>
+                  <input type="email" id="billing-email" name="billing-email" required>
+                </div>
+                <div class="form-group">
+                  <label for="billing-phone">Phone Number <span class="required">*</span></label>
+                  <input type="tel" id="billing-phone" name="billing-phone" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Shipping Information -->
+            <div class="form-section">
+              <h2>Shipping Information</h2>
+              <div class="form-group checkbox-group">
+                <input type="checkbox" id="same-as-billing" name="same-as-billing" checked>
+                <label for="same-as-billing">Same as billing address</label>
+              </div>
+
+              <div id="shipping-fields" class="hidden">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="shipping-first-name">First Name <span class="required">*</span></label>
+                    <input type="text" id="shipping-first-name" name="shipping-first-name">
+                  </div>
+                  <div class="form-group">
+                    <label for="shipping-last-name">Last Name <span class="required">*</span></label>
+                    <input type="text" id="shipping-last-name" name="shipping-last-name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="shipping-company">Company Name (Optional)</label>
+                  <input type="text" id="shipping-company" name="shipping-company">
+                </div>
+                <div class="form-group">
+                  <label for="shipping-address1">Address Line 1 <span class="required">*</span></label>
+                  <input type="text" id="shipping-address1" name="shipping-address1">
+                </div>
+                <div class="form-group">
+                  <label for="shipping-address2">Address Line 2 (Optional)</label>
+                  <input type="text" id="shipping-address2" name="shipping-address2">
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="shipping-city">City <span class="required">*</span></label>
+                    <input type="text" id="shipping-city" name="shipping-city">
+                  </div>
+                  <div class="form-group">
+                    <label for="shipping-state">State/Province <span class="required">*</span></label>
+                    <input type="text" id="shipping-state" name="shipping-state">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="shipping-zip">ZIP/Postal Code <span class="required">*</span></label>
+                    <input type="text" id="shipping-zip" name="shipping-zip">
+                  </div>
+                  <div class="form-group">
+                    <label for="shipping-country">Country <span class="required">*</span></label>
+                    <select id="shipping-country" name="shipping-country">
+                      <option value="">Select Country</option>
+                      <option value="US">United States</option>
+                      <option value="CA">Canada</option>
+                      <option value="UK">United Kingdom</option>
+                      <option value="AU">Australia</option>
+                      <option value="DE">Germany</option>
+                      <option value="FR">France</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="order-notes">Order Notes (Optional)</label>
+                <textarea id="order-notes" name="order-notes" rows="4"
+                  placeholder="Notes about your order, e.g. special delivery instructions"></textarea>
+              </div>
+            </div>
+
+            <!-- Shipping Method -->
+            <div class="form-section">
+              <h2>Shipping Method</h2>
+              <div class="shipping-methods">
+                <div class="shipping-method">
+                  <input type="radio" id="standard-shipping" name="shipping-method" value="standard" checked>
+                  <label for="standard-shipping">
+                    <div class="method-name">Standard Shipping</div>
+                    <div class="method-description">Delivery in 5-7 business days</div>
+                    <div class="method-price">$50.00</div>
+                  </label>
+                </div>
+                <div class="shipping-method">
+                  <input type="radio" id="express-shipping" name="shipping-method" value="express">
+                  <label for="express-shipping">
+                    <div class="method-name">Express Shipping</div>
+                    <div class="method-description">Delivery in 2-3 business days</div>
+                    <div class="method-price">$120.00</div>
+                  </label>
+                </div>
+                <div class="shipping-method">
+                  <input type="radio" id="local-pickup" name="shipping-method" value="pickup">
+                  <label for="local-pickup">
+                    <div class="method-name">Local Pickup</div>
+                    <div class="method-description">Pick up from our warehouse</div>
+                    <div class="method-price">Free</div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="form-section">
+              <h2>Payment Method</h2>
+              <div class="payment-methods">
+                <div class="payment-method">
+                  <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+                  <label for="credit-card">
+                    <div class="method-icon"><i class="far fa-credit-card"></i></div>
+                    <div class="method-name">Credit Card</div>
+                    <div class="payment-icons">
+                      <i class="fab fa-cc-visa"></i>
+                      <i class="fab fa-cc-mastercard"></i>
+                      <i class="fab fa-cc-amex"></i>
+                      <i class="fab fa-cc-discover"></i>
+                    </div>
+                  </label>
+                </div>
+                <div class="payment-method">
+                  <input type="radio" id="paypal" name="payment-method" value="paypal">
+                  <label for="paypal">
+                    <div class="method-icon"><i class="fab fa-paypal"></i></div>
+                    <div class="method-name">PayPal</div>
+                  </label>
+                </div>
+                <div class="payment-method">
+                  <input type="radio" id="bank-transfer" name="payment-method" value="bank-transfer">
+                  <label for="bank-transfer">
+                    <div class="method-icon"><i class="fas fa-university"></i></div>
+                    <div class="method-name">Bank Transfer</div>
+                  </label>
+                </div>
+              </div>
+
+              <div id="credit-card-fields">
+                <div class="form-row">
+                  <div class="form-group full-width">
+                    <label for="card-name">Name on Card <span class="required">*</span></label>
+                    <input type="text" id="card-name" name="card-name" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group full-width">
+                    <label for="card-number">Card Number <span class="required">*</span></label>
+                    <div class="card-input-wrapper">
+                      <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+                      <div class="card-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-discover"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="card-expiry">Expiration Date <span class="required">*</span></label>
+                    <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/YY" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="card-cvc">CVC/CVV <span class="required">*</span></label>
+                    <div class="card-input-wrapper">
+                      <input type="text" id="card-cvc" name="card-cvc" placeholder="123" required>
+                      <i class="fas fa-question-circle tooltip-icon"
+                        title="3-digit security code on the back of your card"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="bank-transfer-fields" class="hidden">
+                <div class="bank-info">
+                  <p>Please use the following information to make a bank transfer:</p>
+                  <ul>
+                    <li><strong>Bank Name:</strong> DentalPro Bank</li>
+                    <li><strong>Account Name:</strong> DentalPro Inc.</li>
+                    <li><strong>Account Number:</strong> 1234567890</li>
+                    <li><strong>Routing Number:</strong> 987654321</li>
+                    <li><strong>SWIFT Code:</strong> DNTLPRO123</li>
+                  </ul>
+                  <p>Your order will be processed once payment is received.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <div class="form-group checkbox-group">
+                <input type="checkbox" id="terms-conditions" name="terms-conditions" required>
+                <label for="terms-conditions">I have read and agree to the <a href="#">Terms and Conditions</a>, <a
+                    href="#">Privacy Policy</a>, and <a href="#">Return Policy</a> <span
+                    class="required">*</span></label>
+              </div>
+              <div class="form-group checkbox-group">
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <label for="newsletter">Subscribe to our newsletter for exclusive offers and updates</label>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="order-summary">
+          <h2>Order Summary</h2>
+          <div class="summary-items">
+            <div class="summary-item">
+              <div class="item-image">
+                <img src="images/products/lab-dental-articulator.jpg" alt="Dental Articulator">
+                <span class="item-quantity">1</span>
+              </div>
+              <div class="item-details">
+                <h3>Dental Articulator</h3>
+                <p class="item-code">Code: LAB-001</p>
+              </div>
+              <div class="item-price">$1,200.00</div>
+            </div>
+            <div class="summary-item">
+              <div class="item-image">
+                <img src="images/products/op-dental-handpiece.jpg" alt="Dental Handpiece Set">
+                <span class="item-quantity">2</span>
+              </div>
+              <div class="item-details">
+                <h3>Dental Handpiece Set</h3>
+                <p class="item-code">Code: OP-002</p>
+              </div>
+              <div class="item-price">$4,400.00</div>
+            </div>
+            <div class="summary-item">
+              <div class="item-image">
+                <img src="images/products/steril-ultrasonic-cleaner.jpg" alt="Ultrasonic Cleaner">
+                <span class="item-quantity">1</span>
+              </div>
+              <div class="item-details">
+                <h3>Ultrasonic Cleaner</h3>
+                <p class="item-code">Code: STERIL-002</p>
+              </div>
+              <div class="item-price">$850.00</div>
+            </div>
+          </div>
+          <div class="coupon-section">
+            <div class="coupon-input">
+              <input type="text" placeholder="Coupon code">
+              <button class="btn btn-secondary">Apply</button>
+            </div>
+          </div>
+          <div class="summary-totals">
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span>$6,450.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Shipping</span>
+              <span id="shipping-cost">$50.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Tax (8%)</span>
+              <span>$516.00</span>
+            </div>
+            <div class="summary-row total">
+              <span>Total</span>
+              <span id="order-total">$7,016.00</span>
+            </div>
+          </div>
+          <button type="submit" form="checkout-form" class="btn btn-primary place-order-btn">Place Order</button>
+          <div class="secure-checkout">
+            <i class="fas fa-lock"></i> Secure Checkout
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="checkout-features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Secure Payment</h3>
+            <p>Your payment information is encrypted</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-exchange-alt"></i>
+          </div>
+          <div class="feature-content">
+            <h3>30-Day Returns</h3>
+            <p>Money back guarantee</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <div class="feature-content">
+            <h3>24/7 Support</h3>
+            <p>Dedicated customer service</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 <!-- Footer Section -->
@@ -91,31 +511,31 @@
       <!-- Quick Links -->
       <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 font-weight-bold">Quick Links</h5>
-        <p><a href="./index.html" class="text-white text-decoration-none">Home</a></p>
-        <p><a href="./products.html" class="text-white text-decoration-none">Products</a></p>
-        <p><a href="./categories.html" class="text-white text-decoration-none">Categories</a></p>
-        <p><a href="./about.html" class="text-white text-decoration-none">About Us</a></p>
-        <p><a href="./contact.html" class="text-white text-decoration-none">Contact</a></p>
+        <p><a th:href="@{/index}" class="text-white text-decoration-none">Home</a></p>
+        <p><a th:href="@{products}" class="text-white text-decoration-none">Products</a></p>
+        <p><a th:href="@{/categories}" class="text-white text-decoration-none">Categories</a></p>
+        <p><a th:href="@{/about}" class="text-white text-decoration-none">About Us</a></p>
+        <p><a th:href="@{/contact}" class="text-white text-decoration-none">Contact</a></p>
       </div>
 
       <!-- Services -->
       <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 font-weight-bold">Services</h5>
-        <p><a href="./services/repair.html" class="text-white text-decoration-none">Equipment Repair</a></p>
-        <p><a href="./services/calibration.html" class="text-white text-decoration-none">Tool Calibration</a></p>
-        <p><a href="./services/training.html" class="text-white text-decoration-none">Staff Training</a></p>
-        <p><a href="./services/consulting.html" class="text-white text-decoration-none">Dental Clinic Consulting</a></p>
-        <p><a href="./services/maintenance.html" class="text-white text-decoration-none">Maintenance Plans</a></p>
+        <p><a th:href="@{/services/repair}" class="text-white text-decoration-none">Equipment Repair</a></p>
+        <p><a th:href="@{/services/calibration}" class="text-white text-decoration-none">Tool Calibration</a></p>
+        <p><a th:href="@{/services/training}" class="text-white text-decoration-none">Staff Training</a></p>
+        <p><a th:href="@{/services/consulting}" class="text-white text-decoration-none">Dental Clinic Consulting</a></p>
+        <p><a th:href="@{/services/maintenance}" class="text-white text-decoration-none">Maintenance Plans</a></p>
       </div>
 
       <!-- Other Links -->
       <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 font-weight-bold">Other Links</h5>
-        <p><a href="./blog.html" class="text-white text-decoration-none">Blog</a></p>
-        <p><a href="./testimonials.html" class="text-white text-decoration-none">Testimonials</a></p>
-        <p><a href="./privacy.html" class="text-white text-decoration-none">Privacy Policy</a></p>
-        <p><a href="./refund-policy.html" class="text-white text-decoration-none">Return and Refund Policy</a></p>
-        <p><a href="./terms.html" class="text-white text-decoration-none">Terms of Service</a></p>
+        <p><a th:href="@{/blog}" class="text-white text-decoration-none">Blog</a></p>
+        <p><a th:href="@{/testimonials}" class="text-white text-decoration-none">Testimonials</a></p>
+        <p><a th:href="@{/privacy}" class="text-white text-decoration-none">Privacy Policy</a></p>
+        <p><a th:href="@{/refund-policy}" class="text-white text-decoration-none">Return and Refund Policy</a></p>
+        <p><a th:href="@{/terms}" class="text-white text-decoration-none">Terms of Service</a></p>
       </div>
 
       <!-- Contact Info -->
@@ -148,7 +568,108 @@
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Toggle shipping fields visibility
+      const sameAsBillingCheckbox = document.getElementById('same-as-billing');
+      const shippingFields = document.getElementById('shipping-fields');
+
+      sameAsBillingCheckbox.addEventListener('change', function () {
+        if (this.checked) {
+          shippingFields.classList.add('hidden');
+        } else {
+          shippingFields.classList.remove('hidden');
+        }
+      });
+
+      // Toggle payment method fields
+      const paymentMethods = document.querySelectorAll('input[name="payment-method"]');
+      const creditCardFields = document.getElementById('credit-card-fields');
+      const bankTransferFields = document.getElementById('bank-transfer-fields');
+
+      paymentMethods.forEach(method => {
+        method.addEventListener('change', function () {
+          if (this.value === 'credit-card') {
+            creditCardFields.classList.remove('hidden');
+            bankTransferFields.classList.add('hidden');
+          } else if (this.value === 'bank-transfer') {
+            creditCardFields.classList.add('hidden');
+            bankTransferFields.classList.remove('hidden');
+          } else {
+            creditCardFields.classList.add('hidden');
+            bankTransferFields.classList.add('hidden');
+          }
+        });
+      });
+
+      // Update shipping cost based on selected method
+      const shippingMethods = document.querySelectorAll('input[name="shipping-method"]');
+      const shippingCostElement = document.getElementById('shipping-cost');
+      const orderTotalElement = document.getElementById('order-total');
+
+      shippingMethods.forEach(method => {
+        method.addEventListener('change', function () {
+          let shippingCost = 0;
+
+          if (this.value === 'standard') {
+            shippingCost = 50;
+          } else if (this.value === 'express') {
+            shippingCost = 120;
+          }
+
+          shippingCostElement.textContent = shippingCost === 0 ? 'Free' : '$' + shippingCost.toFixed(2);
+
+          // Update total
+          const subtotal = 6450;
+          const tax = subtotal * 0.08;
+          const total = subtotal + tax + shippingCost;
+
+          orderTotalElement.textContent = '$' + total.toFixed(2);
+        });
+      });
+
+      // Form validation
+      const checkoutForm = document.getElementById('checkout-form');
+
+      checkoutForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Simple validation
+        let isValid = true;
+        const requiredFields = checkoutForm.querySelectorAll('[required]');
+
+        requiredFields.forEach(field => {
+          if (!field.value.trim()) {
+            isValid = false;
+            field.classList.add('invalid');
+          } else {
+            field.classList.remove('invalid');
+          }
+        });
+
+        if (isValid) {
+          // Simulate form submission
+          alert('Order placed successfully! Redirecting to confirmation page...');
+          // In a real application, you would submit the form or make an API call here
+          // window.location.href = 'order-confirmation.html';
+        } else {
+          alert('Please fill in all required fields.');
+        }
+      });
+
+      // Remove invalid class on input
+      const formInputs = checkoutForm.querySelectorAll('input, select, textarea');
+
+      formInputs.forEach(input => {
+        input.addEventListener('input', function () {
+          if (this.value.trim()) {
+            this.classList.remove('invalid');
+          }
+        });
+      });
+    });
+  </script>
 </body>
+
 </html>
+
