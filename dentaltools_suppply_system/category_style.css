@@ -49,13 +49,16 @@
 
 /* Global Styles */
 :root {
-    --primary-color: #1e88e5;
-    --secondary-color: #64b5f6;
-    --accent-color: #0d47a1;
+    --primary-color: #8e6dbd;
+    --secondary-color: #b39ddb;
+    --accent-color: #5e35b1;
+    --light-lavender: #f3effa;
+    --medium-lavender: #d1c4e9;
+    --dark-lavender: #7e57c2;
     --text-color: #333;
     --light-text: #666;
     --white: #fff;
-    --light-bg: #f5f9ff;
+    --light-bg: #f9f5ff;
     --border-color: #e0e0e0;
     --success-color: #4caf50;
     --warning-color: #ff9800;
@@ -63,6 +66,7 @@
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
 }
+
 
 
 /* Header Styles */
