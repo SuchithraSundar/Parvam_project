@@ -4,14 +4,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products - Dental Tools Management System</title>
+  <title>Hygiene Dental Equipment-Products</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="products-styles.css">
   <link rel="stylesheet" href="animated-header.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+</head>
 
 <body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="left">
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-linkedin-in"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-twitter"></i>
+      <span><i class="fas fa-phone"></i> +91-7348974535</span>
+      <span><i class="fas fa-envelope"></i> dentaltech@tools.com</span>
+    </div>
+    <div class="right">
+      <span><i class="fas fa-map-marker-alt"></i>Hassan,Karnataka</span>
+      <span><i class="fas fa-truck"></i> Track Order</span>
+      <span><i class="fas fa-user"></i> 
+        <a href="./login.html">Log In</a> | 
+        <a href="./register.html">Sign Up</a>
+      </span>
+    </div>
+    
+  </div>
+
   <!-- Header -->
   <header>
     <div class="logo">
@@ -21,11 +53,11 @@
       <input type="text" placeholder="Search" />
       <button><i class="fas fa-search"></i> Search</button>
     </div>
-    <a href="./cart.html" class="text-decoration-none text-dark">
-      <div class="cart">
-        <i class="fas fa-shopping-cart"></i> Cart
-      </div>
-    </a>
+      <a href="./cart.html" class="text-decoration-none text-dark">
+	  <div class="cart">
+	    <i class="fas fa-shopping-cart"></i> Cart
+	  </div>
+	</a>
   </header>
 
   <!-- Navigation -->
@@ -35,10 +67,10 @@
         <a class="nav-link" href="./">HOME</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./categories.html">CATEGORIES</a>
+          <a class="nav-link" href="./categories.html">CATEGORIES</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./products.html">PRODUCTS</a>
+          <a class="nav-link" href="./products.html">PRODUCTS</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./cart.html">CART</a>
@@ -47,18 +79,20 @@
         <a class="nav-link" href="./checkouts.html">CHECKOUTS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./about.html">ABOUT US</a>
+          <a class="nav-link" href="./about.html">ABOUT US</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./contact.html">CONTACT</a>
+          <a class="nav-link" href="./contact.html">CONTACT</a>
       </li>
     </ul>
   </nav>
 
+
+
   <section class="hero products-hero">
     <canvas id="heroCanvas"></canvas>
     <div class="container">
-      <h1>Our Products</h1>
+      <h1 class="text-center mb-4 fw-bold">Our Products</h1>
       <p>Explore our comprehensive range of high-quality dental equipment and tools</p>
     </div>
   </section>
@@ -127,7 +161,7 @@
         <div class="product-item" data-category="laboratory" data-price="1200">
           <div class="product-badge new">New</div>
           <div class="product-image">
-            <img src="images/products/lab-dental-articulator.jpg" alt="Dental Articulator">
+            <img src="images/categories/laboratory/dental articulator.jpg" alt="Dental Articulator">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -155,13 +189,13 @@
               <span class="product-code">Code: LAB-001</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="laboratory" data-price="2500">
           <div class="product-image">
-            <img src="images/products/lab-model-trimmer.jpg" alt="Model Trimmer">
+            <img src="images/categories/laboratory/dental model trimmer.avif" alt="Model Trimmer">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -188,14 +222,14 @@
               <span class="product-code">Code: LAB-002</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="laboratory" data-price="3200">
           <div class="product-badge sale">Sale</div>
           <div class="product-image">
-            <img src="images/products/lab-vacuum-mixer.jpg" alt="Vacuum Mixer">
+            <img src="images/categories/laboratory/Vacuum Mixer.jpg" alt="Vacuum Mixer">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -223,13 +257,13 @@
               <span class="product-code">Code: LAB-003</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="laboratory" data-price="5800">
           <div class="product-image">
-            <img src="images/products/lab-porcelain-furnace.jpg" alt="Porcelain Furnace">
+            <img src="images/categories/laboratory/Dental Porcelain Furnace.webp" alt="Porcelain Furnace">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -256,13 +290,13 @@
               <span class="product-code">Code: LAB-004</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="laboratory" data-price="1800">
           <div class="product-image">
-            <img src="images/products/lab-casting-machine.jpg" alt="Casting Machine">
+            <img src="images/categories/laboratory/Dental casting machine.jpg" alt="Casting Machine">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -289,14 +323,14 @@
               <span class="product-code">Code: LAB-005</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="laboratory" data-price="950">
           <div class="product-badge new">New</div>
           <div class="product-image">
-            <img src="images/products/lab-sandblaster.jpg" alt="Dental Sandblaster">
+            <img src="images/categories/laboratory/Dental Sandblaster.jpg" alt="Dental Sandblaster">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -324,14 +358,14 @@
               <span class="product-code">Code: LAB-006</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <!-- Operating Equipment -->
         <div class="product-item" data-category="operating" data-price="12500">
           <div class="product-image">
-            <img src="images/products/op-dental-chair.jpg" alt="Dental Chair Unit">
+            <img src="images/categories/operating/Dental Chair Unit.jpg" alt="Dental Chair Unit">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -358,14 +392,14 @@
               <span class="product-code">Code: OP-001</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="operating" data-price="2200">
           <div class="product-badge sale">Sale</div>
           <div class="product-image">
-            <img src="images/products/op-dental-handpiece.jpg" alt="Dental Handpiece Set">
+            <img src="images/categories/operating/Dental Handpiece Set.jpg" alt="Dental Handpiece Set">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -393,13 +427,13 @@
               <span class="product-code">Code: OP-002</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="operating" data-price="1800">
           <div class="product-image">
-            <img src="images/products/op-intraoral-camera.jpg" alt="Intraoral Camera">
+            <img src="images/categories/operating/Intraoral Camera.webp" alt="Intraoral Camera">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -426,13 +460,13 @@
               <span class="product-code">Code: OP-003</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="operating" data-price="1500">
           <div class="product-image">
-            <img src="images/products/op-dental-light.jpg" alt="Dental Operating Light">
+            <img src="images/categories/operating/Dental Operating Light.jpg" alt="Dental Operating Light">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -459,14 +493,14 @@
               <span class="product-code">Code: OP-004</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="operating" data-price="3800">
           <div class="product-badge new">New</div>
           <div class="product-image">
-            <img src="images/products/op-dental-xray.jpg" alt="Dental X-Ray Unit">
+            <img src="images/categories/operating/Dental X-ray Machine.jpg" alt="Dental X-Ray Unit">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -493,13 +527,13 @@
               <span class="product-code">Code: OP-005</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="operating" data-price="4500">
           <div class="product-image">
-            <img src="images/products/op-dental-laser.jpg" alt="Dental Laser System">
+            <img src="images/categories/operating/Dental laser system.jpg" alt="Dental Laser System">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -526,14 +560,14 @@
               <span class="product-code">Code: OP-006</span>
               <span class="product-stock limited"><i class="fas fa-exclamation-circle"></i> Limited Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <!-- Surgical Equipment -->
         <div class="product-item" data-category="surgical" data-price="850">
           <div class="product-image">
-            <img src="images/products/surg-extraction-forceps.jpg" alt="Dental Extraction Forceps Set">
+            <img src="images/categories/surgical/Dental Extraction Forceps Set.jpg" alt="Dental Extraction Forceps Set">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -560,14 +594,14 @@
               <span class="product-code">Code: SURG-001</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="surgical" data-price="3500">
           <div class="product-badge sale">Sale</div>
           <div class="product-image">
-            <img src="images/products/surg-implant-kit.jpg" alt="Dental Implant Kit">
+            <img src="images/categories/surgical/Dental Implant Kit.jpg" alt="Dental Implant Kit">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -595,13 +629,13 @@
               <span class="product-code">Code: SURG-002</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="surgical" data-price="6800">
           <div class="product-image">
-            <img src="images/products/surg-piezosurgery.jpg" alt="Piezosurgery Unit">
+            <img src="images/categories/surgical/Piezosurgery Unit.jpg" alt="Piezosurgery Unit">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -628,13 +662,13 @@
               <span class="product-code">Code: SURG-003</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="surgical" data-price="1200">
           <div class="product-image">
-            <img src="images/products/surg-surgical-kit.jpg" alt="Oral Surgery Kit">
+            <img src="images/categories/surgical/Oral Surgery Kit.jpg" alt="Oral Surgery Kit">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -660,14 +694,14 @@
               <span class="product-code">Code: SURG-004</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="surgical" data-price="750">
           <div class="product-badge new">New</div>
           <div class="product-image">
-            <img src="images/products/surg-microsurgery-kit.jpg" alt="Dental Microsurgery Kit">
+            <img src="images/categories/surgical/Dental microsurgery kit.jpg" alt="Dental Microsurgery Kit">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -694,13 +728,13 @@
               <span class="product-code">Code: SURG-005</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="surgical" data-price="2800">
           <div class="product-image">
-            <img src="images/products/surg-surgical-motor.jpg" alt="Surgical Motor System">
+            <img src="images/categories/surgical/Surgical Motor System.jpg" alt="Surgical Motor System">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -727,14 +761,14 @@
               <span class="product-code">Code: SURG-006</span>
               <span class="product-stock limited"><i class="fas fa-exclamation-circle"></i> Limited Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <!-- Sterilisation Equipment -->
         <div class="product-item" data-category="sterilisation" data-price="4200">
           <div class="product-image">
-            <img src="images/products/steril-autoclave.jpg" alt="Dental Autoclave">
+            <img src="images/categories/sterilisation/Dental Autoclave.jpg" alt="Dental Autoclave">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -761,14 +795,14 @@
               <span class="product-code">Code: STERIL-001</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="sterilisation" data-price="850">
           <div class="product-badge sale">Sale</div>
           <div class="product-image">
-            <img src="images/products/steril-ultrasonic-cleaner.jpg" alt="Ultrasonic Cleaner">
+            <img src="images/categories/sterilisation/Ultrasonic Cleaner.jpg" alt="Ultrasonic Cleaner">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -796,13 +830,13 @@
               <span class="product-code">Code: STERIL-002</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="sterilisation" data-price="450">
           <div class="product-image">
-            <img src="images/products/steril-sealing-machine.jpg" alt="Sterilization Pouch Sealer">
+            <img src="images/categories/sterilisation/Sterilization Pouch Sealer.jpg" alt="Sterilization Pouch Sealer">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -829,13 +863,13 @@
               <span class="product-code">Code: STERIL-003</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="sterilisation" data-price="650">
           <div class="product-image">
-            <img src="images/products/steril-uv-cabinet.jpg" alt="UV Sterilization Cabinet">
+            <img src="images/categories/sterilisation/UV Sterilization Cabinet.jpg" alt="UV Sterilization Cabinet">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -862,14 +896,14 @@
               <span class="product-code">Code: STERIL-004</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="sterilisation" data-price="1200">
           <div class="product-badge new">New</div>
           <div class="product-image">
-            <img src="images/products/steril-washer-disinfector.jpg" alt="Washer Disinfector">
+            <img src="images/categories/sterilisation/Washer Disinfector.jpg" alt="Washer Disinfector">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -896,13 +930,13 @@
               <span class="product-code">Code: STERIL-005</span>
               <span class="product-stock in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-item" data-category="sterilisation" data-price="350">
           <div class="product-image">
-            <img src="images/products/steril-instrument-tray.jpg" alt="Sterilization Cassettes">
+            <img src="images/categories/sterilisation/Sterilization Cassettes Set.jpg" alt="Sterilization Cassettes">
             <div class="product-actions">
               <button class="action-btn"><i class="fas fa-heart"></i></button>
               <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
@@ -929,12 +963,12 @@
               <span class="product-code">Code: STERIL-006</span>
               <span class="product-stock out-stock"><i class="fas fa-times-circle"></i> Out of Stock</span>
             </div>
-            <a href="#" class="btn btn-secondary">Notify Me</a>
+            <a href="#" class="btn btn-custom">Notify Me</a>
           </div>
         </div>
       </div>
 
-      <div class="pagination">
+      <!-- <div class="pagination">
         <a href="#" class="page-link active">1</a>
         <a href="#" class="page-link">2</a>
         <a href="#" class="page-link">3</a>
@@ -942,14 +976,14 @@
         <a href="#" class="page-link">8</a>
         <a href="#" class="page-link next"><i class="fas fa-chevron-right"></i></a>
       </div>
-    </div>
+    </div> -->
   </section>
 
   <section class="cta">
     <div class="container">
       <h2>Need assistance with selecting the right equipment?</h2>
       <p>Our dental equipment specialists are here to help you find the perfect tools for your practice</p>
-      <a href="contactus.html" class="btn btn-primary">
+      <a href="./contact.html" class="btn btn-custom">
         <i class="fas fa-headset me-2"></i> Contact Us Today
       </a>
     </div>
@@ -957,25 +991,25 @@
 
   <section class="featured-brands">
     <div class="container">
-      <h2>Our Trusted Brands</h2>
+      <h2 class="text-center mb-4 fw-bold">Our Trusted Brands</h2>
       <div class="brands-slider">
         <div class="brand-logo">
-          <img src="images/brands/brand1.png" alt="Dental Brand">
+          <img src="images/products/brand1.png" alt="Dental Brand">
         </div>
         <div class="brand-logo">
-          <img src="images/brands/brand2.png" alt="Dental Brand">
+          <img src="images/products/brand2.png" alt="Dental Brand">
         </div>
         <div class="brand-logo">
-          <img src="images/brands/brand3.png" alt="Dental Brand">
+          <img src="images/products/brand3.png" alt="Dental Brand">
         </div>
         <div class="brand-logo">
-          <img src="images/brands/brand4.png" alt="Dental Brand">
+          <img src="images/products/brand4.png" alt="Dental Brand">
         </div>
         <div class="brand-logo">
-          <img src="images/brands/brand5.png" alt="Dental Brand">
+          <img src="images/products/brand5.png" alt="Dental Brand">
         </div>
         <div class="brand-logo">
-          <img src="images/brands/brand6.png" alt="Dental Brand">
+          <img src="images/products/brand6.png" alt="Dental Brand">
         </div>
       </div>
     </div>

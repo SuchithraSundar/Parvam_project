@@ -32,6 +32,11 @@
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
 }
 
+.cta{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
 @media (max-width: 768px) {
     .category-hero {
         padding: 3rem 1.5rem;
@@ -49,9 +54,9 @@
 
 /* Global Styles */
 :root {
-    --primary-color: #8e6dbd;
-    --secondary-color: #b39ddb;
-    --accent-color: #5e35b1;
+   --primary-color:  #7ad2bd;
+    --secondary-color: #b7eae6;
+ --accent-color: hsl(151, 53%, 35%);
     --light-lavender: #f3effa;
     --medium-lavender: #d1c4e9;
     --dark-lavender: #7e57c2;
@@ -161,7 +166,7 @@ nav ul li a.active {
 
 .section-title {
     text-align: center;
-    color: var(--accent-color);
+    color: #004d4d;
     font-size: 32px;
     margin-bottom: 15px;
 }
@@ -236,7 +241,7 @@ nav ul li a.active {
 }
 
 .category-header h2 {
-    color: var(--accent-color);
+    color: #004d4d;
     font-size: 32px;
     margin-bottom: 15px;
 }
@@ -250,7 +255,7 @@ nav ul li a.active {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-bottom: 40px;
     margin-left: 50px;

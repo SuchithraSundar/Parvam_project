@@ -115,20 +115,25 @@ nav ul li a::after {
 }
 
 nav ul li a:hover {
-  color: #1e88e5;
+  color: #60e130;
 }
 
 nav ul li a:hover::after {
   width: 100%;
+<<<<<<< HEAD
 }
 
+=======
+  size: small;
+}
+>>>>>>> 99e285395d36f3523b3f4d8010fef07fd51994d8
 
 /* carousel image */
 
 .carousel-inner {
   overflow: hidden;
 }
-
+ssss
 .carousel-item {
   transition: transform 1.2s ease-in-out !important;
 }
