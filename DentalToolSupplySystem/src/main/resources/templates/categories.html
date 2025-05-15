@@ -3,15 +3,12 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hygiene Dental Equipment-Categories</title>
-<<<<<<< HEAD
- <link rel="stylesheet" th:href="@{css/category_style.css}" />
   <link rel="stylesheet" th:href="@{css/style.css}" />
-=======
-  
-  <link rel="stylesheet" href="style.css" />
->>>>>>> 0b2513c378a25afc071a765509c8acb26184d8ee
+  <link rel="stylesheet" th:href="@{css/category_style.css}" />
+  <link rel="stylesheet" th:href="@{css/animated-header.css}">
+  <link rel="stylesheet" th:href="@{css/products_styles.css}" />
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -25,8 +22,7 @@
 </head>
 
 <body>
-
-  <!-- Top Bar -->
+ <!-- Top Bar -->
   <div class="top-bar">
     <div class="left">
       <i class="fab fa-facebook-f"></i>
@@ -89,10 +85,12 @@
       </li>
     </ul>
   </nav>
-  <section class="hero category-hero">
+  
+  <section class="hero products-hero">
+    <canvas id="heroCanvas"></canvas>
     <div class="container">
-      <h1>Product Categories</h1>
-      <p>Browse our comprehensive range of high-quality dental equipment</p>
+      <h1>Products Categories</h1>
+      <p>Explore our comprehensive range of high-quality dental equipment and tools</p>
     </div>
   </section>
 
@@ -105,38 +103,38 @@
       <div class="categories-grid">
         <div class="category-card">
           <div class="category-icon">
-            <img src="images/icons/laboratory-icon.png" alt="Laboratory Equipment Icon">
+            <img src="images/categories/laboratory/laboratory.png" alt="Laboratory Equipment Icon">
           </div>
           <h3>Laboratory Equipment</h3>
           <p>We provide a wide range of laboratory equipment needed by dentists for dentistry.</p>
-          <a href="#laboratory" class="btn btn-secondary">View Products</a>
+          <a href="#laboratory" class="btn btn-custom">View Products</a>
         </div>
 
         <div class="category-card">
           <div class="category-icon">
-            <img src="images/icons/operating-icon.png" alt="Operating Equipment Icon">
+            <img src="images/categories/operating/operating.png" alt="Operating Equipment Icon">
           </div>
           <h3>Operating Equipment</h3>
           <p>We provide high quality dental operating equipment required for dentistry.</p>
-          <a href="#operating" class="btn btn-secondary">View Products</a>
+          <a href="#operating" class="btn btn-custom">View Products</a>
         </div>
 
         <div class="category-card">
           <div class="category-icon">
-            <img src="images/icons/surgical-icon.png" alt="Surgical Equipment Icon">
+            <img src="images/categories/surgical/surgical.png" alt="Surgical Equipment Icon">
           </div>
           <h3>Surgical Equipment</h3>
           <p>We provide all types of supreme grade equipment required for dental surgeries.</p>
-          <a href="#surgical" class="btn btn-secondary">View Products</a>
+          <a href="#surgical" class="btn btn-custom">View Products</a>
         </div>
 
         <div class="category-card">
           <div class="category-icon">
-            <img src="images/icons/sterilisation-icon.png" alt="Sterilisation Equipment Icon">
+            <img src="images/categories/sterilisation/sterilisation.png" alt="Sterilisation Equipment Icon">
           </div>
           <h3>Sterilisation Equipment</h3>
           <p>We here provide a wide range of sterilisation needed equipment's and accessories.</p>
-          <a href="#sterilisation" class="btn btn-secondary">View Products</a>
+          <a href="#sterilisation" class="btn btn-custom">View Products</a>
         </div>
       </div>
     </div>
@@ -153,7 +151,7 @@
       <div class="products-grid">
         <div class="product-card">
           <div class="product-image">
-            <img src="images/products/lab-dental-articulator.jpg" alt="Dental Articulator">
+            <img src="images/categories/laboratory/dental articulator.jpg" alt="Dental Articulator">
           </div>
           <div class="product-details">
             <h3>Dental Articulator</h3>
@@ -169,13 +167,13 @@
               <span class="product-code">Code: LAB-001</span>
               <span class="product-stock">In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-card">
           <div class="product-image">
-            <img src="images/products/lab-model-trimmer.jpg" alt="Model Trimmer">
+            <img src="images/categories/laboratory/dental model trimmer.avif" alt="Model Trimmer">
           </div>
           <div class="product-details">
             <h3>Dental Model Trimmer</h3>
@@ -191,13 +189,13 @@
               <span class="product-code">Code: LAB-002</span>
               <span class="product-stock">In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-card">
           <div class="product-image">
-            <img src="images/products/lab-vacuum-mixer.jpg" alt="Vacuum Mixer">
+            <img src="images/categories/laboratory/Vacuum Mixer.jpg" alt="Vacuum Mixer">
           </div>
           <div class="product-details">
             <h3>Vacuum Mixer</h3>
@@ -213,13 +211,13 @@
               <span class="product-code">Code: LAB-003</span>
               <span class="product-stock">In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-card">
           <div class="product-image">
-            <img src="images/products/lab-porcelain-furnace.jpg" alt="Porcelain Furnace">
+            <img src="images/categories/laboratory/Dental Porcelain Furnace.webp" alt="Porcelain Furnace">
           </div>
           <div class="product-details">
             <h3>Dental Porcelain Furnace</h3>
@@ -235,13 +233,58 @@
               <span class="product-code">Code: LAB-004</span>
               <span class="product-stock">In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/categories/laboratory/Dental curing  light.jpg" alt="Dental Curing Light">
+          </div>
+          <div class="product-details">
+            <h3>Dental Curing Light</h3>
+            <p class="product-description">High-intensity LED curing light for efficient polymerization of dental
+              materials such as composites and adhesives.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Wireless operation</li>
+              <li><i class="fas fa-check"></i> Multiple curing modes</li>
+              <li><i class="fas fa-check"></i> Long battery life</li>
+              <li><i class="fas fa-check"></i> Lightweight ergonomic design</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: LAB-004</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-custom">View Details</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/categories/laboratory/Dental Sandblaster.jpg" alt="Dental Sandblaster">
+          </div>
+          <div class="product-details">
+            <h3>Dental Sandblaster</h3>
+            <p class="product-description">Compact dental sandblaster for cleaning, roughening, and preparing dental
+              prosthetics and appliances.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Dual chamber system</li>
+              <li><i class="fas fa-check"></i> Precise abrasive control</li>
+              <li><i class="fas fa-check"></i> High visibility work area</li>
+              <li><i class="fas fa-check"></i> Easy nozzle replacement</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: LAB-005</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
       </div>
 
+
+
       <div class="category-footer">
-        <a href="#" class="btn btn-primary">View All Laboratory Equipment</a>
+        <a href="#" class="btn btn-custom">View All Laboratory Equipment</a>
       </div>
     </div>
   </section>
@@ -258,7 +301,7 @@
       <div class="products-grid">
         <div class="product-card">
           <div class="product-image">
-            <img src="images/products/op-dental-chair.jpg" alt="Dental Chair Unit">
+            <img src="images/categories/operating/Dental Chair Unit.jpg" alt="Dental Chair Unit">
           </div>
           <div class="product-details">
             <h3>Dental Chair Unit</h3>
@@ -274,13 +317,13 @@
               <span class="product-code">Code: OP-001</span>
               <span class="product-stock">In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-card">
           <div class="product-image">
-            <img src="images/products/op-dental-handpiece.jpg" alt="Dental Handpiece Set">
+            <img src="images/categories/operating/Dental Handpiece Set.jpg" alt="Dental Handpiece Set">
           </div>
           <div class="product-details">
             <h3>Dental Handpiece Set</h3>
@@ -296,13 +339,13 @@
               <span class="product-code">Code: OP-002</span>
               <span class="product-stock">In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-card">
           <div class="product-image">
-            <img src="images/products/op-intraoral-camera.jpg" alt="Intraoral Camera">
+            <img src="images/categories/operating/Intraoral Camera.webp" alt="Intraoral Camera">
           </div>
           <div class="product-details">
             <h3>Intraoral Camera</h3>
@@ -318,13 +361,13 @@
               <span class="product-code">Code: OP-003</span>
               <span class="product-stock">In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-card">
           <div class="product-image">
-            <img src="images/products/op-dental-light.jpg" alt="Dental Operating Light">
+            <img src="images/categories/operating/Dental Operating Light.jpg" alt="Dental Operating Light">
           </div>
           <div class="product-details">
             <h3>Dental Operating Light</h3>
@@ -340,13 +383,57 @@
               <span class="product-code">Code: OP-004</span>
               <span class="product-stock">In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/categories/operating/Dental X-ray Machine.jpg" alt="Dental X-ray Machine">
+          </div>
+          <div class="product-details">
+            <h3>Dental X-ray Machine</h3>
+            <p class="product-description">State-of-the-art dental X-ray machine for clear, detailed imaging of teeth
+              and jaw.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Digital imaging for fast results</li>
+              <li><i class="fas fa-check"></i> Adjustable exposure settings</li>
+              <li><i class="fas fa-check"></i> Compact and space-saving design</li>
+              <li><i class="fas fa-check"></i> Easy-to-use interface</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: DX-002</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-custom">View Details</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/categories/operating/Ultrasonic Scaler.jpg" alt="Ultrasonic Scaler">
+          </div>
+          <div class="product-details">
+            <h3>Ultrasonic Scaler</h3>
+            <p class="product-description">Advanced ultrasonic scaler for efficient removal of plaque and calculus
+              during prophylaxis.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Multiple power settings</li>
+              <li><i class="fas fa-check"></i> Detachable handpiece</li>
+              <li><i class="fas fa-check"></i> Auto water supply integration</li>
+              <li><i class="fas fa-check"></i> Ergonomic tips</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: OP-004</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-custom">View Details</a>
+          </div>
+        </div>
+
       </div>
 
       <div class="category-footer">
-        <a href="#" class="btn btn-primary">View All Operating Equipment</a>
+        <a href="#" class="btn btn-custom">View All Operating Equipment</a>
       </div>
     </div>
   </section>
@@ -362,7 +449,7 @@
       <div class="products-grid">
         <div class="product-card">
           <div class="product-image">
-            <img src="images/products/surg-extraction-forceps.jpg" alt="Dental Extraction Forceps Set">
+            <img src="images/categories/surgical/Dental Extraction Forceps Set.jpg" alt="Dental Extraction Forceps Set">
           </div>
           <div class="product-details">
             <h3>Dental Extraction Forceps Set</h3>
@@ -378,13 +465,13 @@
               <span class="product-code">Code: SURG-001</span>
               <span class="product-stock">In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-card">
           <div class="product-image">
-            <img src="images/products/surg-implant-kit.jpg" alt="Dental Implant Kit">
+            <img src="images/categories/surgical/Dental Implant Kit.jpg" alt="Dental Implant Kit">
           </div>
           <div class="product-details">
             <h3>Dental Implant Kit</h3>
@@ -400,13 +487,13 @@
               <span class="product-code">Code: SURG-002</span>
               <span class="product-stock">In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-card">
           <div class="product-image">
-            <img src="images/products/surg-piezosurgery.jpg" alt="Piezosurgery Unit">
+            <img src="images/categories/surgical/Piezosurgery Unit.jpg" alt="Piezosurgery Unit">
           </div>
           <div class="product-details">
             <h3>Piezosurgery Unit</h3>
@@ -422,13 +509,13 @@
               <span class="product-code">Code: SURG-003</span>
               <span class="product-stock">In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-card">
           <div class="product-image">
-            <img src="images/products/surg-surgical-kit.jpg" alt="Oral Surgery Kit">
+            <img src="images/categories/surgical/Oral Surgery Kit.jpg" alt="Oral Surgery Kit">
           </div>
           <div class="product-details">
             <h3>Oral Surgery Kit</h3>
@@ -443,13 +530,56 @@
               <span class="product-code">Code: SURG-004</span>
               <span class="product-stock">In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/categories/surgical/Dental Surgical Kit.jpg" alt="Dental Surgical Kit">
+          </div>
+          <div class="product-details">
+            <h3>Dental Surgical Kit</h3>
+            <p class="product-description">Comprehensive surgical kit including all essential tools for dental surgical
+              procedures.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Includes elevators, scalpel, scissors</li>
+              <li><i class="fas fa-check"></i> Surgical-grade stainless steel</li>
+              <li><i class="fas fa-check"></i> Organized in sterile tray</li>
+              <li><i class="fas fa-check"></i> Reusable and autoclavable</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: SURG-002</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-custom">View Details</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/categories/surgical/Bone Rongeur.jpg" alt="Bone Rongeur">
+          </div>
+          <div class="product-details">
+            <h3>Bone Rongeur</h3>
+            <p class="product-description">Heavy-duty rongeur used in oral surgery for trimming and removing bone
+              tissues.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Strong double-spring mechanism</li>
+              <li><i class="fas fa-check"></i> Tapered jaws for precision</li>
+              <li><i class="fas fa-check"></i> Rust-resistant finish</li>
+              <li><i class="fas fa-check"></i> Suitable for multiple surgical applications</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: SURG-003</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-custom">View Details</a>
+          </div>
+        </div>
+
       </div>
 
       <div class="category-footer">
-        <a href="#" class="btn btn-primary">View All Surgical Equipment</a>
+        <a href="#" class="btn btn-custom">View All Surgical Equipment</a>
       </div>
     </div>
   </section>
@@ -466,7 +596,7 @@
       <div class="products-grid">
         <div class="product-card">
           <div class="product-image">
-            <img src="images/products/steril-autoclave.jpg" alt="Dental Autoclave">
+            <img src="images/categories/sterilisation/Dental Autoclave.jpg" alt="Dental Autoclave">
           </div>
           <div class="product-details">
             <h3>Dental Autoclave</h3>
@@ -482,13 +612,13 @@
               <span class="product-code">Code: STERIL-001</span>
               <span class="product-stock">In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-card">
           <div class="product-image">
-            <img src="images/products/steril-ultrasonic-cleaner.jpg" alt="Ultrasonic Cleaner">
+            <img src="images/categories/sterilisation/Ultrasonic Cleaner.jpg" alt="Ultrasonic Cleaner">
           </div>
           <div class="product-details">
             <h3>Ultrasonic Cleaner</h3>
@@ -504,13 +634,13 @@
               <span class="product-code">Code: STERIL-002</span>
               <span class="product-stock">In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-card">
           <div class="product-image">
-            <img src="images/products/steril-sealing-machine.jpg" alt="Sterilization Pouch Sealer">
+            <img src="images/categories/sterilisation/Sterilization Pouch Sealer.jpg" alt="Sterilization Pouch Sealer">
           </div>
           <div class="product-details">
             <h3>Sterilization Pouch Sealer</h3>
@@ -526,13 +656,13 @@
               <span class="product-code">Code: STERIL-003</span>
               <span class="product-stock">In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
 
         <div class="product-card">
           <div class="product-image">
-            <img src="images/products/steril-uv-cabinet.jpg" alt="UV Sterilization Cabinet">
+            <img src="images/categories/sterilisation/UV Sterilization Cabinet.jpg" alt="UV Sterilization Cabinet">
           </div>
           <div class="product-details">
             <h3>UV Sterilization Cabinet</h3>
@@ -548,13 +678,56 @@
               <span class="product-code">Code: STERIL-004</span>
               <span class="product-stock">In Stock</span>
             </div>
-            <a href="#" class="btn btn-primary">View Details</a>
+            <a href="#" class="btn btn-custom">View Details</a>
           </div>
         </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/categories/sterilisation/Glass Bead Sterilizer.jpg" alt="Glass Bead Sterilizer">
+          </div>
+          <div class="product-details">
+            <h3>Glass Bead Sterilizer</h3>
+            <p class="product-description">Quick-heating sterilizer ideal for small instruments like endodontic files
+              and burs.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Heats up to 250°C</li>
+              <li><i class="fas fa-check"></i> Compact and portable</li>
+              <li><i class="fas fa-check"></i> Fast sterilization in 10–15 seconds</li>
+              <li><i class="fas fa-check"></i> No chemicals required</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: STERIL-002</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-custom">View Details</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/categories/sterilisation/Hot Air Oven.jpg" alt="Hot Air Oven">
+          </div>
+          <div class="product-details">
+            <h3>Hot Air Oven</h3>
+            <p class="product-description">Dry heat sterilizer for sharp instruments and materials that may corrode in
+              steam autoclaves.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Adjustable temperature up to 250°C</li>
+              <li><i class="fas fa-check"></i> Timer control for sterilization cycles</li>
+              <li><i class="fas fa-check"></i> Double-walled insulation</li>
+              <li><i class="fas fa-check"></i> Ideal for clinics and labs</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: STERIL-003</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-custom">View Details</a>
+          </div>
+        </div>
+
       </div>
 
       <div class="category-footer">
-        <a href="#" class="btn btn-primary">View All Sterilisation Equipment</a>
+        <a href="#" class="btn btn-custom">View All Sterilisation Equipment</a>
       </div>
     </div>
   </section>
@@ -563,7 +736,7 @@
     <div class="container">
       <h2>Need assistance with selecting the right equipment?</h2>
       <p>Our dental equipment specialists are here to help you find the perfect tools for your practice</p>
-      <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+      <a href="contact.html" class="btn btn-custom">Contact Us Today</a>
     </div>
   </section>
 
@@ -631,6 +804,7 @@
   </div>
 </footer>
 
+<script src="@{JS/animated-header.js}"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>

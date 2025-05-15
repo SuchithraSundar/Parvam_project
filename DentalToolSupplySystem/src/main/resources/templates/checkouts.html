@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hygiene Dental Equipment-Checkouts</title>
-  <link rel="stylesheet" th:href="@{css/checkouts_style.css}" />
-  <link rel="stylesheet" th:href="@{css/style.css}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hygiene Dental Equipment-Categories</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./checkout-styles.css" />
+  <link rel="stylesheet" href="./products-styles.css">
+  <link rel="stylesheet" href="animated-header.css">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -34,12 +36,12 @@
     <div class="right">
       <span><i class="fas fa-map-marker-alt"></i>Hassan,Karnataka</span>
       <span><i class="fas fa-truck"></i> Track Order</span>
-      <span><i class="fas fa-user"></i> 
-        <a th:href="@{/login}">Log In</a> | 
-        <a th:href="@{/register}">Sign Up</a>
+      <span><i class="fas fa-user"></i>
+        <a href="./login.html">Log In</a> |
+        <a href="./register.html">Sign Up</a>
       </span>
     </div>
-    
+
   </div>
 
   <!-- Header -->
@@ -51,44 +53,52 @@
       <input type="text" placeholder="Search" />
       <button><i class="fas fa-search"></i> Search</button>
     </div>
-      <a th:href="@{/cart}" class="text-decoration-none text-dark">
-	  <div class="cart">
-	    <i class="fas fa-shopping-cart"></i> Cart
-	  </div>
-	</a>
+    <a href="./cart.html" class="text-decoration-none text-dark">
+      <div class="cart">
+        <i class="fas fa-shopping-cart"></i> Cart
+      </div>
+    </a>
   </header>
 
   <!-- Navigation -->
   <nav>
     <ul>
       <li class="nav-item">
-        <a class="nav-link" th:href="@{/}">HOME</a>
+        <a class="nav-link" href="./">HOME</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" th:href="@{/categories}">CATEGORIES</a>
+        <a class="nav-link" href="./categories.html">CATEGORIES</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" th:href="@{/products}">PRODUCTS</a>
+        <a class="nav-link" href="./products.html">PRODUCTS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" th:href="@{/cart}">CART</a>
+        <a class="nav-link" href="./cart.html">CART</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" th:href="@{/checkouts}">CHECKOUTS</a>
+        <a class="nav-link" href="./checkouts.html">CHECKOUTS</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" th:href="@{/about}">ABOUT US</a>
+        <a class="nav-link" href="./about.html">ABOUT US</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" th:href="@{/contact}">CONTACT</a>
+        <a class="nav-link" href="./contact.html">CONTACT</a>
       </li>
     </ul>
   </nav>
 
-
+<!-- 
   <section class="page-header">
     <div class="container">
       <h1>Checkout</h1>
+      
+    </div>
+  </section> -->
+
+  <section class="hero products-hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="container">
+      <h1 class="text-center mb-4 fw-bold">Checkouts</h1>
       <div class="breadcrumb">
         <a href="index.html">Home</a>
         <i class="fas fa-chevron-right"></i>
@@ -98,6 +108,8 @@
       </div>
     </div>
   </section>
+
+  
 
   <section class="checkout-section">
     <div class="container">
@@ -403,7 +415,7 @@
           <div class="summary-items">
             <div class="summary-item">
               <div class="item-image">
-                <img src="images/products/lab-dental-articulator.jpg" alt="Dental Articulator">
+                <img src="images/categories/laboratory/dental articulator.jpg" alt="Dental Articulator">
                 <span class="item-quantity">1</span>
               </div>
               <div class="item-details">
@@ -414,7 +426,7 @@
             </div>
             <div class="summary-item">
               <div class="item-image">
-                <img src="images/products/op-dental-handpiece.jpg" alt="Dental Handpiece Set">
+                <img src="images/categories/operating/Dental Handpiece Set.jpg" alt="Dental Handpiece Set">
                 <span class="item-quantity">2</span>
               </div>
               <div class="item-details">
@@ -425,7 +437,7 @@
             </div>
             <div class="summary-item">
               <div class="item-image">
-                <img src="images/products/steril-ultrasonic-cleaner.jpg" alt="Ultrasonic Cleaner">
+                <img src="images/categories/sterilisation/Ultrasonic Cleaner.jpg" alt="Ultrasonic Cleaner">
                 <span class="item-quantity">1</span>
               </div>
               <div class="item-details">
@@ -438,7 +450,7 @@
           <div class="coupon-section">
             <div class="coupon-input">
               <input type="text" placeholder="Coupon code">
-              <button class="btn btn-secondary">Apply</button>
+              <button class="btn btn-custom">Apply</button>
             </div>
           </div>
           <div class="summary-totals">
@@ -459,7 +471,7 @@
               <span id="order-total">$7,016.00</span>
             </div>
           </div>
-          <button type="submit" form="checkout-form" class="btn btn-primary place-order-btn">Place Order</button>
+          <button type="submit" form="checkout-form" class="btn btn-custom place-order-btn">Place Order</button>
           <div class="secure-checkout">
             <i class="fas fa-lock"></i> Secure Checkout
           </div>
@@ -502,7 +514,6 @@
     </div>
   </section>
 
-
 <!-- Footer Section -->
 <footer class="bg-dark text-white pt-5 pb-4">
   <div class="container text-md-left">
@@ -511,31 +522,31 @@
       <!-- Quick Links -->
       <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 font-weight-bold">Quick Links</h5>
-        <p><a th:href="@{/index}" class="text-white text-decoration-none">Home</a></p>
-        <p><a th:href="@{products}" class="text-white text-decoration-none">Products</a></p>
-        <p><a th:href="@{/categories}" class="text-white text-decoration-none">Categories</a></p>
-        <p><a th:href="@{/about}" class="text-white text-decoration-none">About Us</a></p>
-        <p><a th:href="@{/contact}" class="text-white text-decoration-none">Contact</a></p>
+        <p><a href="./" class="text-white text-decoration-none">Home</a></p>
+        <p><a href="./products.html" class="text-white text-decoration-none">Products</a></p>
+        <p><a href="./categories.html" class="text-white text-decoration-none">Categories</a></p>
+        <p><a href="./about.html" class="text-white text-decoration-none">About Us</a></p>
+        <p><a href="./contact.html" class="text-white text-decoration-none">Contact</a></p>
       </div>
 
       <!-- Services -->
       <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 font-weight-bold">Services</h5>
-        <p><a th:href="@{/services/repair}" class="text-white text-decoration-none">Equipment Repair</a></p>
-        <p><a th:href="@{/services/calibration}" class="text-white text-decoration-none">Tool Calibration</a></p>
-        <p><a th:href="@{/services/training}" class="text-white text-decoration-none">Staff Training</a></p>
-        <p><a th:href="@{/services/consulting}" class="text-white text-decoration-none">Dental Clinic Consulting</a></p>
-        <p><a th:href="@{/services/maintenance}" class="text-white text-decoration-none">Maintenance Plans</a></p>
+        <p><a href="./services/repair" class="text-white text-decoration-none">Equipment Repair</a></p>
+        <p><a href="./services/calibration" class="text-white text-decoration-none">Tool Calibration</a></p>
+        <p><a href="./services/training" class="text-white text-decoration-none">Staff Training</a></p>
+        <p><a href="./services/consulting" class="text-white text-decoration-none">Dental Clinic Consulting</a></p>
+        <p><a href="./services/maintenance" class="text-white text-decoration-none">Maintenance Plans</a></p>
       </div>
 
       <!-- Other Links -->
       <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 font-weight-bold">Other Links</h5>
-        <p><a th:href="@{/blog}" class="text-white text-decoration-none">Blog</a></p>
-        <p><a th:href="@{/testimonials}" class="text-white text-decoration-none">Testimonials</a></p>
-        <p><a th:href="@{/privacy}" class="text-white text-decoration-none">Privacy Policy</a></p>
-        <p><a th:href="@{/refund-policy}" class="text-white text-decoration-none">Return and Refund Policy</a></p>
-        <p><a th:href="@{/terms}" class="text-white text-decoration-none">Terms of Service</a></p>
+        <p><a href="./blog" class="text-white text-decoration-none">Blog</a></p>
+        <p><a href="./testimonials" class="text-white text-decoration-none">Testimonials</a></p>
+        <p><a href="./privacy" class="text-white text-decoration-none">Privacy Policy</a></p>
+        <p><a href="./refund-policy" class="text-white text-decoration-none">Return and Refund Policy</a></p>
+        <p><a href="./terms" class="text-white text-decoration-none">Terms of Service</a></p>
       </div>
 
       <!-- Contact Info -->
@@ -566,7 +577,7 @@
   </div>
 </footer>
 
-
+<script src="animated-header.js"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -672,4 +683,3 @@
 </body>
 
 </html>
-
