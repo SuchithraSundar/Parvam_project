@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hygiene Dental Equipment-Categories</title>
+<<<<<<< HEAD
+ <link rel="stylesheet" th:href="@{css/category_style.css}" />
+  <link rel="stylesheet" th:href="@{css/style.css}" />
+=======
+  
+  <link rel="stylesheet" href="style.css" />
+>>>>>>> 0b2513c378a25afc071a765509c8acb26184d8ee
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="left">
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-linkedin-in"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-twitter"></i>
+      <span><i class="fas fa-phone"></i> +91-7348974535</span>
+      <span><i class="fas fa-envelope"></i> dentaltech@tools.com</span>
+    </div>
+    <div class="right">
+      <span><i class="fas fa-map-marker-alt"></i>Hassan,Karnataka</span>
+      <span><i class="fas fa-truck"></i> Track Order</span>
+      <span><i class="fas fa-user"></i> 
+        <a th:href="@{/login}">Log In</a> | 
+        <a th:href="@{/register}">Sign Up</a>
+      </span>
+    </div>
+    
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="/images/index/logo1.png" alt="Logo" /><span>DentalTech</span>
+    </div>
+    <div class="search-container">
+      <input type="text" placeholder="Search" />
+      <button><i class="fas fa-search"></i> Search</button>
+    </div>
+      <a th:href="@{/cart}" class="text-decoration-none text-dark">
+	  <div class="cart">
+	    <i class="fas fa-shopping-cart"></i> Cart
+	  </div>
+	</a>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/}">HOME</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" th:href="@{/categories}">CATEGORIES</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" th:href="@{/products}">PRODUCTS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/cart}">CART</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/checkouts}">CHECKOUTS</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" th:href="@{/about}">ABOUT US</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" th:href="@{/contact}">CONTACT</a>
+      </li>
+    </ul>
+  </nav>
+  <section class="hero category-hero">
+    <div class="container">
+      <h1>Product Categories</h1>
+      <p>Browse our comprehensive range of high-quality dental equipment</p>
+    </div>
+  </section>
+
+  <section class="categories-overview">
+    <div class="container">
+      <h2 class="section-title">Our Equipment Categories</h2>
+      <p class="section-description">We offer a wide range of dental equipment to meet all your practice needs. Browse
+        our categories below to find the perfect tools for your dental practice.</p>
+
+      <div class="categories-grid">
+        <div class="category-card">
+          <div class="category-icon">
+            <img src="images/icons/laboratory-icon.png" alt="Laboratory Equipment Icon">
+          </div>
+          <h3>Laboratory Equipment</h3>
+          <p>We provide a wide range of laboratory equipment needed by dentists for dentistry.</p>
+          <a href="#laboratory" class="btn btn-secondary">View Products</a>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">
+            <img src="images/icons/operating-icon.png" alt="Operating Equipment Icon">
+          </div>
+          <h3>Operating Equipment</h3>
+          <p>We provide high quality dental operating equipment required for dentistry.</p>
+          <a href="#operating" class="btn btn-secondary">View Products</a>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">
+            <img src="images/icons/surgical-icon.png" alt="Surgical Equipment Icon">
+          </div>
+          <h3>Surgical Equipment</h3>
+          <p>We provide all types of supreme grade equipment required for dental surgeries.</p>
+          <a href="#surgical" class="btn btn-secondary">View Products</a>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">
+            <img src="images/icons/sterilisation-icon.png" alt="Sterilisation Equipment Icon">
+          </div>
+          <h3>Sterilisation Equipment</h3>
+          <p>We here provide a wide range of sterilisation needed equipment's and accessories.</p>
+          <a href="#sterilisation" class="btn btn-secondary">View Products</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Laboratory Equipment Section -->
+  <section id="laboratory" class="category-section">
+    <div class="container">
+      <div class="category-header">
+        <h2>Laboratory Equipment</h2>
+        <p>Essential laboratory equipment for dental practices to ensure precise and high-quality dental work.</p>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/products/lab-dental-articulator.jpg" alt="Dental Articulator">
+          </div>
+          <div class="product-details">
+            <h3>Dental Articulator</h3>
+            <p class="product-description">Precision dental articulator for accurate reproduction of jaw movements and
+              occlusal relationships.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Adjustable condylar guidance</li>
+              <li><i class="fas fa-check"></i> Precise centric locks</li>
+              <li><i class="fas fa-check"></i> Compatible with most mounting systems</li>
+              <li><i class="fas fa-check"></i> Durable metal construction</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: LAB-001</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/products/lab-model-trimmer.jpg" alt="Model Trimmer">
+          </div>
+          <div class="product-details">
+            <h3>Dental Model Trimmer</h3>
+            <p class="product-description">High-performance model trimmer with diamond disc for precise and smooth model
+              preparation.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Powerful 1/2 HP motor</li>
+              <li><i class="fas fa-check"></i> 10-inch diamond disc</li>
+              <li><i class="fas fa-check"></i> Water spray system</li>
+              <li><i class="fas fa-check"></i> Adjustable work table</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: LAB-002</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/products/lab-vacuum-mixer.jpg" alt="Vacuum Mixer">
+          </div>
+          <div class="product-details">
+            <h3>Vacuum Mixer</h3>
+            <p class="product-description">Digital vacuum mixer for bubble-free mixing of dental materials including
+              plaster, investment, and silicone.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Digital control panel</li>
+              <li><i class="fas fa-check"></i> Programmable mixing time</li>
+              <li><i class="fas fa-check"></i> High vacuum pressure</li>
+              <li><i class="fas fa-check"></i> Multiple bowl sizes available</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: LAB-003</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/products/lab-porcelain-furnace.jpg" alt="Porcelain Furnace">
+          </div>
+          <div class="product-details">
+            <h3>Dental Porcelain Furnace</h3>
+            <p class="product-description">Advanced ceramic furnace for firing all types of dental porcelains with
+              precise temperature control.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Touch screen interface</li>
+              <li><i class="fas fa-check"></i> 200 program memory</li>
+              <li><i class="fas fa-check"></i> Automatic calibration</li>
+              <li><i class="fas fa-check"></i> Rapid heating technology</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: LAB-004</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-footer">
+        <a href="#" class="btn btn-primary">View All Laboratory Equipment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Operating Equipment Section -->
+  <section id="operating" class="category-section bg-light">
+    <div class="container">
+      <div class="category-header">
+        <h2>Operating Equipment</h2>
+        <p>High-quality dental operating equipment designed for comfort, efficiency, and precision in dental procedures.
+        </p>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/products/op-dental-chair.jpg" alt="Dental Chair Unit">
+          </div>
+          <div class="product-details">
+            <h3>Dental Chair Unit</h3>
+            <p class="product-description">Comprehensive dental treatment unit with chair, delivery system, and
+              assistant's instrumentation.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Programmable chair positions</li>
+              <li><i class="fas fa-check"></i> LED operating light</li>
+              <li><i class="fas fa-check"></i> Integrated water system</li>
+              <li><i class="fas fa-check"></i> Seamless upholstery</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: OP-001</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/products/op-dental-handpiece.jpg" alt="Dental Handpiece Set">
+          </div>
+          <div class="product-details">
+            <h3>Dental Handpiece Set</h3>
+            <p class="product-description">Complete set of high and low-speed handpieces for various dental procedures.
+            </p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> High-speed turbine handpiece</li>
+              <li><i class="fas fa-check"></i> Low-speed contra-angle</li>
+              <li><i class="fas fa-check"></i> Air motor</li>
+              <li><i class="fas fa-check"></i> LED illumination</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: OP-002</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/products/op-intraoral-camera.jpg" alt="Intraoral Camera">
+          </div>
+          <div class="product-details">
+            <h3>Intraoral Camera</h3>
+            <p class="product-description">High-definition intraoral camera for detailed visualization and patient
+              education.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> HD image quality</li>
+              <li><i class="fas fa-check"></i> Auto-focus capability</li>
+              <li><i class="fas fa-check"></i> USB connectivity</li>
+              <li><i class="fas fa-check"></i> Lightweight ergonomic design</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: OP-003</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/products/op-dental-light.jpg" alt="Dental Operating Light">
+          </div>
+          <div class="product-details">
+            <h3>Dental Operating Light</h3>
+            <p class="product-description">Advanced LED dental operating light with adjustable intensity and color
+              temperature.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Shadowless illumination</li>
+              <li><i class="fas fa-check"></i> Multiple intensity settings</li>
+              <li><i class="fas fa-check"></i> Adjustable color temperature</li>
+              <li><i class="fas fa-check"></i> Touchless sensor control</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: OP-004</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-footer">
+        <a href="#" class="btn btn-primary">View All Operating Equipment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Surgical Equipment Section -->
+  <section id="surgical" class="category-section">
+    <div class="container">
+      <div class="category-header">
+        <h2>Surgical Equipment</h2>
+        <p>Supreme grade surgical equipment for dental procedures, designed for precision and reliability.</p>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/products/surg-extraction-forceps.jpg" alt="Dental Extraction Forceps Set">
+          </div>
+          <div class="product-details">
+            <h3>Dental Extraction Forceps Set</h3>
+            <p class="product-description">Complete set of premium extraction forceps for all types of dental
+              extractions.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Surgical grade stainless steel</li>
+              <li><i class="fas fa-check"></i> Ergonomic handles</li>
+              <li><i class="fas fa-check"></i> Precision-engineered beaks</li>
+              <li><i class="fas fa-check"></i> Autoclavable</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: SURG-001</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/products/surg-implant-kit.jpg" alt="Dental Implant Kit">
+          </div>
+          <div class="product-details">
+            <h3>Dental Implant Kit</h3>
+            <p class="product-description">Comprehensive implant system with all necessary instruments for dental
+              implant procedures.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Titanium implants</li>
+              <li><i class="fas fa-check"></i> Surgical drills</li>
+              <li><i class="fas fa-check"></i> Torque wrench</li>
+              <li><i class="fas fa-check"></i> Surgical guide templates</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: SURG-002</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/products/surg-piezosurgery.jpg" alt="Piezosurgery Unit">
+          </div>
+          <div class="product-details">
+            <h3>Piezosurgery Unit</h3>
+            <p class="product-description">Advanced piezoelectric surgery device for precise bone cutting with minimal
+              soft tissue damage.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Selective cutting action</li>
+              <li><i class="fas fa-check"></i> Multiple power settings</li>
+              <li><i class="fas fa-check"></i> Irrigation system</li>
+              <li><i class="fas fa-check"></i> Various tip options</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: SURG-003</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/products/surg-surgical-kit.jpg" alt="Oral Surgery Kit">
+          </div>
+          <div class="product-details">
+            <h3>Oral Surgery Kit</h3>
+            <p class="product-description">Complete set of surgical instruments for various oral surgery procedures.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Surgical scissors</li>
+              <li><i class="fas fa-check"></i> Tissue forceps</li>
+              <li><i class="fas fa-check"></i> Needle holders</li>
+              <li><i class="fas fa-check"></i> Surgical elevators</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: SURG-004</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-footer">
+        <a href="#" class="btn btn-primary">View All Surgical Equipment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sterilisation Equipment Section -->
+  <section id="sterilisation" class="category-section bg-light">
+    <div class="container">
+      <div class="category-header">
+        <h2>Sterilisation Equipment</h2>
+        <p>Essential sterilisation equipment and accessories to maintain the highest standards of hygiene in dental
+          practices.</p>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/products/steril-autoclave.jpg" alt="Dental Autoclave">
+          </div>
+          <div class="product-details">
+            <h3>Dental Autoclave</h3>
+            <p class="product-description">Class B autoclave for sterilizing all types of dental instruments with
+              pre-vacuum and post-vacuum cycles.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> 23L capacity</li>
+              <li><i class="fas fa-check"></i> Multiple sterilization programs</li>
+              <li><i class="fas fa-check"></i> LCD display</li>
+              <li><i class="fas fa-check"></i> Built-in printer</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: STERIL-001</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/products/steril-ultrasonic-cleaner.jpg" alt="Ultrasonic Cleaner">
+          </div>
+          <div class="product-details">
+            <h3>Ultrasonic Cleaner</h3>
+            <p class="product-description">Digital ultrasonic cleaner for thorough pre-sterilization cleaning of dental
+              instruments.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> 6L capacity</li>
+              <li><i class="fas fa-check"></i> Digital timer</li>
+              <li><i class="fas fa-check"></i> Heating function</li>
+              <li><i class="fas fa-check"></i> Stainless steel tank</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: STERIL-002</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/products/steril-sealing-machine.jpg" alt="Sterilization Pouch Sealer">
+          </div>
+          <div class="product-details">
+            <h3>Sterilization Pouch Sealer</h3>
+            <p class="product-description">Automatic sealing machine for sterilization pouches with temperature control.
+            </p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> Constant heat sealing</li>
+              <li><i class="fas fa-check"></i> Adjustable sealing width</li>
+              <li><i class="fas fa-check"></i> Automatic start</li>
+              <li><i class="fas fa-check"></i> Compact design</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: STERIL-003</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/products/steril-uv-cabinet.jpg" alt="UV Sterilization Cabinet">
+          </div>
+          <div class="product-details">
+            <h3>UV Sterilization Cabinet</h3>
+            <p class="product-description">UV sterilization cabinet for storage and additional sterilization of dental
+              instruments.</p>
+            <ul class="product-features">
+              <li><i class="fas fa-check"></i> UV-C germicidal lamp</li>
+              <li><i class="fas fa-check"></i> Stainless steel interior</li>
+              <li><i class="fas fa-check"></i> Timer function</li>
+              <li><i class="fas fa-check"></i> Safety door switch</li>
+            </ul>
+            <div class="product-meta">
+              <span class="product-code">Code: STERIL-004</span>
+              <span class="product-stock">In Stock</span>
+            </div>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-footer">
+        <a href="#" class="btn btn-primary">View All Sterilisation Equipment</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Need assistance with selecting the right equipment?</h2>
+      <p>Our dental equipment specialists are here to help you find the perfect tools for your practice</p>
+      <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+    </div>
+  </section>
+
+
+<!-- Footer Section -->
+<footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container text-md-left">
+    <div class="row text-md-left">
+
+      <!-- Quick Links -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold">Quick Links</h5>
+        <p><a th:href="@{/index}" class="text-white text-decoration-none">Home</a></p>
+        <p><a th:href="@{products}" class="text-white text-decoration-none">Products</a></p>
+        <p><a th:href="@{/categories}" class="text-white text-decoration-none">Categories</a></p>
+        <p><a th:href="@{/about}" class="text-white text-decoration-none">About Us</a></p>
+        <p><a th:href="@{/contact}" class="text-white text-decoration-none">Contact</a></p>
+      </div>
+
+      <!-- Services -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold">Services</h5>
+        <p><a th:href="@{/services/repair}" class="text-white text-decoration-none">Equipment Repair</a></p>
+        <p><a th:href="@{/services/calibration}" class="text-white text-decoration-none">Tool Calibration</a></p>
+        <p><a th:href="@{/services/training}" class="text-white text-decoration-none">Staff Training</a></p>
+        <p><a th:href="@{/services/consulting}" class="text-white text-decoration-none">Dental Clinic Consulting</a></p>
+        <p><a th:href="@{/services/maintenance}" class="text-white text-decoration-none">Maintenance Plans</a></p>
+      </div>
+
+      <!-- Other Links -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold">Other Links</h5>
+        <p><a th:href="@{/blog}" class="text-white text-decoration-none">Blog</a></p>
+        <p><a th:href="@{/testimonials}" class="text-white text-decoration-none">Testimonials</a></p>
+        <p><a th:href="@{/privacy}" class="text-white text-decoration-none">Privacy Policy</a></p>
+        <p><a th:href="@{/refund-policy}" class="text-white text-decoration-none">Return and Refund Policy</a></p>
+        <p><a th:href="@{/terms}" class="text-white text-decoration-none">Terms of Service</a></p>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold">Contact Info</h5>
+        <p>DentalTech tools,Dairy Circle,Hassan, Karnataka 571313</p>
+        <p>Email: support@dentaltechtools.com</p>
+        <p>Phone: +91 7348974535</p>
+        <p>Hours: Mon - Fri: 10am - 7pm (CST)</p>
+      </div>
+
+    </div>
+
+    <hr class="mb-4">
+    <div class="row align-items-center">
+      <div class="col-md-7 col-lg-8">
+        <p>© 2025 DentalTech Tools. All rights reserved.</p>
+      </div>
+      <div class="col-md-5 col-lg-4">
+        <div class="text-center text-md-right">
+          <a href="#" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white me-4"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white me-4"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white me-4"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>

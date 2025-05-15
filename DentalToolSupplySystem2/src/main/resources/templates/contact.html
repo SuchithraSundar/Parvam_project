@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hygiene Dental Equipment-Contact Us</title>
+  <link rel="stylesheet" th:href="@{css/about_contact_style.css}" />
+  <link rel="stylesheet" th:href="@{css/style.css}" />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="left">
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-linkedin-in"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-twitter"></i>
+      <span><i class="fas fa-phone"></i> +91-7348974535</span>
+      <span><i class="fas fa-envelope"></i> dentaltech@tools.com</span>
+    </div>
+    <div class="right">
+      <span><i class="fas fa-map-marker-alt"></i>Hassan,Karnataka</span>
+      <span><i class="fas fa-truck"></i> Track Order</span>
+      <span><i class="fas fa-user"></i> 
+        <a th:href="@{/login}">Log In</a> | 
+        <a th:href="@{/register}">Sign Up</a>
+      </span>
+    </div>
+    
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="/images/index/logo1.png" alt="Logo" /><span>DentalTech</span>
+    </div>
+    <div class="search-container">
+      <input type="text" placeholder="Search" />
+      <button><i class="fas fa-search"></i> Search</button>
+    </div>
+      <a th:href="@{/cart}" class="text-decoration-none text-dark">
+	  <div class="cart">
+	    <i class="fas fa-shopping-cart"></i> Cart
+	  </div>
+	</a>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/}">HOME</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" th:href="@{/categories}">CATEGORIES</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" th:href="@{/products}">PRODUCTS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/cart}">CART</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/checkouts}">CHECKOUTS</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" th:href="@{/about}">ABOUT US</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" th:href="@{/contact}">CONTACT</a>
+      </li>
+    </ul>
+  </nav>
+
+
+  <section class="hero contact-hero">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>We're here to answer your questions and provide support</p>
+    </div>
+  </section>
+
+  <section class="contact-content">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>Have questions about our Dental Tools Management System? Our team is ready to assist you with any inquiries
+            or support needs.</p>
+
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h3>Our Location</h3>
+              <p>123 Dental Avenue, Suite 456<br>New York, NY 10001</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h3>Phone Number</h3>
+              <p>Main: (555) 123-4567<br>Support: (555) 987-6543</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h3>Email Address</h3>
+              <p>info@dentalpro.com<br>support@dentalpro.com</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h3>Business Hours</h3>
+              <p>Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday - Sunday: Closed</p>
+            </div>
+          </div>
+
+          <div class="social-contact">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h2>Send Us a Message</h2>
+          <form action="#" method="post">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="general">General Inquiry</option>
+                <option value="support">Technical Support</option>
+                <option value="demo">Request a Demo</option>
+                <option value="pricing">Pricing Information</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+	<div class="container">
+	<h2 class="mb-5 fw-bold">Our Location</h2>
+      <div class="map-container">
+        <div class="map">
+          <!-- Placeholder for map -->
+          <img src="/images/contact/map.png" alt="Map Location" class="rounded-lg w-full h-auto object-cover" />
+        </div>
+      </div>
+	</div>
+	
+
+      <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>How quickly can we implement your system?</h3>
+            <p>Most dental practices can be fully set up within 1-2 weeks, including training and data migration.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Is technical support included?</h3>
+            <p>Yes, all plans include access to our technical support team during business hours.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can your system integrate with our existing practice management software?</h3>
+            <p>We support integration with most major dental practice management systems. Contact us for specific
+              compatibility information.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Do you offer on-site training?</h3>
+            <p>Yes, on-site training is available for practices within the continental US for an additional fee.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to transform your dental inventory management?</h2>
+      <p>Schedule a free demo today</p>
+      <a href="#" class="btn btn-primary">Request Demo</a>
+    </div>
+  </section>
+  
+  
+<!-- Footer Section -->
+<footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container text-md-left">
+    <div class="row text-md-left">
+
+      <!-- Quick Links -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold">Quick Links</h5>
+        <p><a th:href="@{/index}" class="text-white text-decoration-none">Home</a></p>
+        <p><a th:href="@{products}" class="text-white text-decoration-none">Products</a></p>
+        <p><a th:href="@{/categories}" class="text-white text-decoration-none">Categories</a></p>
+        <p><a th:href="@{/about}" class="text-white text-decoration-none">About Us</a></p>
+        <p><a th:href="@{/contact}" class="text-white text-decoration-none">Contact</a></p>
+      </div>
+
+      <!-- Services -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold">Services</h5>
+        <p><a th:href="@{/services/repair}" class="text-white text-decoration-none">Equipment Repair</a></p>
+        <p><a th:href="@{/services/calibration}" class="text-white text-decoration-none">Tool Calibration</a></p>
+        <p><a th:href="@{/services/training}" class="text-white text-decoration-none">Staff Training</a></p>
+        <p><a th:href="@{/services/consulting}" class="text-white text-decoration-none">Dental Clinic Consulting</a></p>
+        <p><a th:href="@{/services/maintenance}" class="text-white text-decoration-none">Maintenance Plans</a></p>
+      </div>
+
+      <!-- Other Links -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold">Other Links</h5>
+        <p><a th:href="@{/blog}" class="text-white text-decoration-none">Blog</a></p>
+        <p><a th:href="@{/testimonials}" class="text-white text-decoration-none">Testimonials</a></p>
+        <p><a th:href="@{/privacy}" class="text-white text-decoration-none">Privacy Policy</a></p>
+        <p><a th:href="@{/refund-policy}" class="text-white text-decoration-none">Return and Refund Policy</a></p>
+        <p><a th:href="@{/terms}" class="text-white text-decoration-none">Terms of Service</a></p>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold">Contact Info</h5>
+        <p>DentalTech tools,Dairy Circle,Hassan, Karnataka 571313</p>
+        <p>Email: support@dentaltechtools.com</p>
+        <p>Phone: +91 7348974535</p>
+        <p>Hours: Mon - Fri: 10am - 7pm (CST)</p>
+      </div>
+
+    </div>
+
+    <hr class="mb-4">
+    <div class="row align-items-center">
+      <div class="col-md-7 col-lg-8">
+        <p>© 2025 DentalTech Tools. All rights reserved.</p>
+      </div>
+      <div class="col-md-5 col-lg-4">
+        <div class="text-center text-md-right">
+          <a href="#" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white me-4"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white me-4"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white me-4"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>
