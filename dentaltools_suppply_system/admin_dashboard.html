@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - DentalTech</title>
+    <link rel="stylesheet" href="admin_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="/images/index/logo1.png" alt="DentalTech Logo" class="logo-img">
+                <h2>DentalTech</h2>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="active">
+                        <a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#products"><i class="fas fa-box"></i> Products</a>
+                    </li>
+                    <li>
+                        <a href="#categories"><i class="fas fa-tags"></i> Categories</a>
+                    </li>
+                    <li>
+                        <a href="#orders"><i class="fas fa-shopping-cart"></i> Orders</a>
+                    </li>
+                    <li>
+                        <a href="#customers"><i class="fas fa-users"></i> Customers</a>
+                    </li>
+                    <li>
+                        <a href="#inventory"><i class="fas fa-warehouse"></i> Inventory</a>
+                    </li>
+                    <li>
+                        <a href="#reports"><i class="fas fa-chart-bar"></i> Reports</a>
+                    </li>
+                    <li>
+                        <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <a href="#logout" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Navigation -->
+            <nav class="top-nav">
+                <div class="nav-left">
+                    <button id="sidebar-toggle" class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="search-container">
+                        <input type="text" placeholder="Search...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="nav-right">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">5</span>
+                    </div>
+                    <div class="message-icon">
+                        <i class="fas fa-envelope"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="admin-profile">
+                        <img src="/images/admin/admin-avatar.jpg" alt="Admin Avatar">
+                        <span>Admin User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content" id="dashboard-section">
+                <div class="page-header">
+                    <h1>Dashboard</h1>
+                    <p>Welcome to DentalTech Admin Panel</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-card-icon" style="background-color: rgba(76, 175, 80, 0.2);">
+                            <i class="fas fa-shopping-cart" style="color: #4CAF50;"></i>
+                        </div>
+                        <div class="stat-card-info">
+                            <h3>Total Orders</h3>
+                            <p class="stat-number">1,285</p>
+                            <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 12.5% from last month</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-icon" style="background-color: rgba(33, 150, 243, 0.2);">
+                            <i class="fas fa-dollar-sign" style="color: #2196F3;"></i>
+                        </div>
+                        <div class="stat-card-info">
+                            <h3>Total Revenue</h3>
+                            <p class="stat-number">$84,382</p>
+                            <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 8.3% from last month</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-icon" style="background-color: rgba(156, 39, 176, 0.2);">
+                            <i class="fas fa-users" style="color: #9C27B0;"></i>
+                        </div>
+                        <div class="stat-card-info">
+                            <h3>Total Customers</h3>
+                            <p class="stat-number">842</p>
+                            <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 4.7% from last month</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-icon" style="background-color: rgba(255, 152, 0, 0.2);">
+                            <i class="fas fa-box" style="color: #FF9800;"></i>
+                        </div>
+                        <div class="stat-card-info">
+                            <h3>Total Products</h3>
+                            <p class="stat-number">384</p>
+                            <p class="stat-change negative"><i class="fas fa-arrow-down"></i> 2.1% from last month</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="recent-orders card">
+                    <div class="card-header">
+                        <h2>Recent Orders</h2>
+                        <a href="#orders" class="view-all">View All</a>
+                    </div>
+                    <div class="card-body">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#ORD-5289</td>
+                                    <td>John Smith</td>
+                                    <td>May 12, 2025</td>
+                                    <td>$1,250.00</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                                            <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-5288</td>
+                                    <td>Sarah Johnson</td>
+                                    <td>May 12, 2025</td>
+                                    <td>$3,850.00</td>
+                                    <td><span class="status-badge processing">Processing</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                                            <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-5287</td>
+                                    <td>Michael Brown</td>
+                                    <td>May 11, 2025</td>
+                                    <td>$750.00</td>
+                                    <td><span class="status-badge shipped">Shipped</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                                            <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-5286</td>
+                                    <td>Emily Davis</td>
+                                    <td>May 11, 2025</td>
+                                    <td>$2,200.00</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                                            <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-5285</td>
+                                    <td>Robert Wilson</td>
+                                    <td>May 10, 2025</td>
+                                    <td>$4,500.00</td>
+                                    <td><span class="status-badge cancelled">Cancelled</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                                            <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Analytics Section -->
+                <div class="analytics-section">
+                    <div class="card sales-chart">
+                        <div class="card-header">
+                            <h2>Sales Analytics</h2>
+                            <div class="chart-filters">
+                                <select id="chart-period">
+                                    <option value="weekly">Weekly</option>
+                                    <option value="monthly" selected>Monthly</option>
+                                    <option value="yearly">Yearly</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="sales-chart-canvas"></canvas>
+                        </div>
+                    </div>
+                    <div class="card top-products">
+                        <div class="card-header">
+                            <h2>Top Selling Products</h2>
+                            <a href="#products" class="view-all">View All</a>
+                        </div>
+                        <div class="card-body">
+                            <ul class="top-products-list">
+                                <li class="product-item">
+                                    <div class="product-info">
+                                        <img src="/images/products/op-dental-handpiece.jpg" alt="Dental Handpiece Set">
+                                        <div>
+                                            <h4>Dental Handpiece Set</h4>
+                                            <p>Code: OP-002</p>
+                                        </div>
+                                    </div>
+                                    <div class="product-stats">
+                                        <div class="sales-bar" style="width: 85%;"></div>
+                                        <p>85 Sales</p>
+                                    </div>
+                                </li>
+                                <li class="product-item">
+                                    <div class="product-info">
+                                        <img src="/images/products/lab-dental-articulator.jpg" alt="Dental Articulator">
+                                        <div>
+                                            <h4>Dental Articulator</h4>
+                                            <p>Code: LAB-001</p>
+                                        </div>
+                                    </div>
+                                    <div class="product-stats">
+                                        <div class="sales-bar" style="width: 72%;"></div>
+                                        <p>72 Sales</p>
+                                    </div>
+                                </li>
+                                <li class="product-item">
+                                    <div class="product-info">
+                                        <img src="/images/products/steril-autoclave.jpg" alt="Dental Autoclave">
+                                        <div>
+                                            <h4>Dental Autoclave</h4>
+                                            <p>Code: STERIL-001</p>
+                                        </div>
+                                    </div>
+                                    <div class="product-stats">
+                                        <div class="sales-bar" style="width: 68%;"></div>
+                                        <p>68 Sales</p>
+                                    </div>
+                                </li>
+                                <li class="product-item">
+                                    <div class="product-info">
+                                        <img src="/images/products/surg-extraction-forceps.jpg"
+                                            alt="Dental Extraction Forceps Set">
+                                        <div>
+                                            <h4>Dental Extraction Forceps Set</h4>
+                                            <p>Code: SURG-001</p>
+                                        </div>
+                                    </div>
+                                    <div class="product-stats">
+                                        <div class="sales-bar" style="width: 54%;"></div>
+                                        <p>54 Sales</p>
+                                    </div>
+                                </li>
+                                <li class="product-item">
+                                    <div class="product-info">
+                                        <img src="/images/products/steril-ultrasonic-cleaner.jpg"
+                                            alt="Ultrasonic Cleaner">
+                                        <div>
+                                            <h4>Ultrasonic Cleaner</h4>
+                                            <p>Code: STERIL-002</p>
+                                        </div>
+                                    </div>
+                                    <div class="product-stats">
+                                        <div class="sales-bar" style="width: 49%;"></div>
+                                        <p>49 Sales</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activities & Inventory Alerts -->
+                <div class="bottom-section">
+                    <div class="card recent-activities">
+                        <div class="card-header">
+                            <h2>Recent Activities</h2>
+                        </div>
+                        <div class="card-body">
+                            <ul class="activity-list">
+                                <li class="activity-item">
+                                    <div class="activity-icon" style="background-color: rgba(76, 175, 80, 0.2);">
+                                        <i class="fas fa-plus" style="color: #4CAF50;"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <p><strong>New product added:</strong> Dental Laser System</p>
+                                        <span class="activity-time">2 hours ago</span>
+                                    </div>
+                                </li>
+                                <li class="activity-item">
+                                    <div class="activity-icon" style="background-color: rgba(33, 150, 243, 0.2);">
+                                        <i class="fas fa-edit" style="color: #2196F3;"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <p><strong>Product updated:</strong> Dental Articulator price changed</p>
+                                        <span class="activity-time">4 hours ago</span>
+                                    </div>
+                                </li>
+                                <li class="activity-item">
+                                    <div class="activity-icon" style="background-color: rgba(255, 152, 0, 0.2);">
+                                        <i class="fas fa-shopping-cart" style="color: #FF9800;"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <p><strong>New order:</strong> #ORD-5289 from John Smith</p>
+                                        <span class="activity-time">5 hours ago</span>
+                                    </div>
+                                </li>
+                                <li class="activity-item">
+                                    <div class="activity-icon" style="background-color: rgba(156, 39, 176, 0.2);">
+                                        <i class="fas fa-user" style="color: #9C27B0;"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <p><strong>New customer registered:</strong> Emily Davis</p>
+                                        <span class="activity-time">8 hours ago</span>
+                                    </div>
+                                </li>
+                                <li class="activity-item">
+                                    <div class="activity-icon" style="background-color: rgba(244, 67, 54, 0.2);">
+                                        <i class="fas fa-trash" style="color: #F44336;"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <p><strong>Product deleted:</strong> Outdated Sterilization Pouch</p>
+                                        <span class="activity-time">Yesterday</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card inventory-alerts">
+                        <div class="card-header">
+                            <h2>Inventory Alerts</h2>
+                            <a href="#inventory" class="view-all">View All</a>
+                        </div>
+                        <div class="card-body">
+                            <ul class="alert-list">
+                                <li class="alert-item critical">
+                                    <div class="alert-icon">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="alert-details">
+                                        <h4>Dental Extraction Forceps Set</h4>
+                                        <p>Stock: <strong>2 units</strong> (Critical)</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary">Restock</button>
+                                </li>
+                                <li class="alert-item low">
+                                    <div class="alert-icon">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                    </div>
+                                    <div class="alert-details">
+                                        <h4>Ultrasonic Cleaner</h4>
+                                        <p>Stock: <strong>5 units</strong> (Low)</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary">Restock</button>
+                                </li>
+                                <li class="alert-item low">
+                                    <div class="alert-icon">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                    </div>
+                                    <div class="alert-details">
+                                        <h4>Dental Handpiece Set</h4>
+                                        <p>Stock: <strong>8 units</strong> (Low)</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary">Restock</button>
+                                </li>
+                                <li class="alert-item expiring">
+                                    <div class="alert-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="alert-details">
+                                        <h4>Sterilization Pouches</h4>
+                                        <p>Expires in: <strong>30 days</strong></p>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary">Reorder</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Section -->
+            <div class="products-content section-content" id="products-section" style="display: none;">
+                <div class="page-header">
+                    <h1>Products Management</h1>
+                    <button class="btn btn-primary add-new-btn"><i class="fas fa-plus"></i> Add New Product</button>
+                </div>
+
+                <div class="filter-section">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search products...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filter-options">
+                        <select id="category-filter">
+                            <option value="">All Categories</option>
+                            <option value="laboratory">Laboratory Equipment</option>
+                            <option value="operating">Operating Equipment</option>
+                            <option value="surgical">Surgical Equipment</option>
+                            <option value="sterilisation">Sterilisation Equipment</option>
+                        </select>
+                        <select id="status-filter">
+                            <option value="">All Status</option>
+                            <option value="in-stock">In Stock</option>
+                            <option value="low-stock">Low Stock</option>
+                            <option value="out-of-stock">Out of Stock</option>
+                        </select>
+                        <select id="sort-by">
+                            <option value="name-asc">Name (A-Z)</option>
+                            <option value="name-desc">Name (Z-A)</option>
+                            <option value="price-low">Price (Low to High)</option>
+                            <option value="price-high">Price (High to Low)</option>
+                            <option value="stock-low">Stock (Low to High)</option>
+                            <option value="stock-high">Stock (High to Low)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <table class="data-table products-table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" id="select-all-products">
+                                    </th>
+                                    <th>Image</th>
+                                    <th>Product Name</th>
+                                    <th>Category</th>
+                                    <th>SKU</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" class="product-checkbox"></td>
+                                    <td><img src="/images/products/lab-dental-articulator.jpg" alt="Dental Articulator"
+                                            class="product-thumbnail"></td>
+                                    <td>Dental Articulator</td>
+                                    <td>Laboratory Equipment</td>
+                                    <td>LAB-001</td>
+                                    <td>$1,200.00</td>
+                                    <td>24</td>
+                                    <td><span class="status-badge in-stock">In Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn view-btn" title="View"><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="action-btn edit-btn" title="Edit"><i
+                                                    class="fas fa-edit"></i></button>
+                                            <button class="action-btn delete-btn" title="Delete"><i
+                                                    class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="product-checkbox"></td>
+                                    <td><img src="/images/products/op-dental-handpiece.jpg" alt="Dental Handpiece Set"
+                                            class="product-thumbnail"></td>
+                                    <td>Dental Handpiece Set</td>
+                                    <td>Operating Equipment</td>
+                                    <td>OP-002</td>
+                                    <td>$2,200.00</td>
+                                    <td>8</td>
+                                    <td><span class="status-badge low-stock">Low Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn view-btn" title="View"><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="action-btn edit-btn" title="Edit"><i
+                                                    class="fas fa-edit"></i></button>
+                                            <button class="action-btn delete-btn" title="Delete"><i
+                                                    class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="product-checkbox"></td>
+                                    <td><img src="/images/products/surg-extraction-forceps.jpg"
+                                            alt="Dental Extraction Forceps Set" class="product-thumbnail"></td>
+                                    <td>Dental Extraction Forceps Set</td>
+                                    <td>Surgical Equipment</td>
+                                    <td>SURG-001</td>
+                                    <td>$850.00</td>
+                                    <td>2</td>
+                                    <td><span class="status-badge critical-stock">Critical Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn view-btn" title="View"><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="action-btn edit-btn" title="Edit"><i
+                                                    class="fas fa-edit"></i></button>
+                                            <button class="action-btn delete-btn" title="Delete"><i
+                                                    class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="product-checkbox"></td>
+                                    <td><img src="/images/products/steril-autoclave.jpg" alt="Dental Autoclave"
+                                            class="product-thumbnail"></td>
+                                    <td>Dental Autoclave</td>
+                                    <td>Sterilisation Equipment</td>
+                                    <td>STERIL-001</td>
+                                    <td>$4,200.00</td>
+                                    <td>15</td>
+                                    <td><span class="status-badge in-stock">In Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn view-btn" title="View"><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="action-btn edit-btn" title="Edit"><i
+                                                    class="fas fa-edit"></i></button>
+                                            <button class="action-btn delete-btn" title="Delete"><i
+                                                    class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="product-checkbox"></td>
+                                    <td><img src="/images/products/steril-ultrasonic-cleaner.jpg"
+                                            alt="Ultrasonic Cleaner" class="product-thumbnail"></td>
+                                    <td>Ultrasonic Cleaner</td>
+                                    <td>Sterilisation Equipment</td>
+                                    <td>STERIL-002</td>
+                                    <td>$850.00</td>
+                                    <td>5</td>
+                                    <td><span class="status-badge low-stock">Low Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn view-btn" title="View"><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="action-btn edit-btn" title="Edit"><i
+                                                    class="fas fa-edit"></i></button>
+                                            <button class="action-btn delete-btn" title="Delete"><i
+                                                    class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="product-checkbox"></td>
+                                    <td><img src="/images/products/steril-instrument-tray.jpg"
+                                            alt="Sterilization Cassettes Set" class="product-thumbnail"></td>
+                                    <td>Sterilization Cassettes Set</td>
+                                    <td>Sterilisation Equipment</td>
+                                    <td>STERIL-006</td>
+                                    <td>$350.00</td>
+                                    <td>0</td>
+                                    <td><span class="status-badge out-of-stock">Out of Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn view-btn" title="View"><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="action-btn edit-btn" title="Edit"><i
+                                                    class="fas fa-edit"></i></button>
+                                            <button class="action-btn delete-btn" title="Delete"><i
+                                                    class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="pagination-section">
+                    <div class="showing-entries">
+                        Showing 1 to 6 of 24 entries
+                    </div>
+                    <div class="pagination">
+                        <button class="page-btn prev" disabled><i class="fas fa-chevron-left"></i></button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">4</button>
+                        <button class="page-btn next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="page-size">
+                        <label for="page-size-select">Show</label>
+                        <select id="page-size-select">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <span>entries</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more sections for other menu items -->
+        </main>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div class="modal" id="add-product-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Product</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="add-product-form">
+                    <div class="form-group">
+                        <label for="product-name">Product Name</label>
+                        <input type="text" id="product-name" name="product-name" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product-category">Category</label>
+                            <select id="product-category" name="product-category" required>
+                                <option value="">Select Category</option>
+                                <option value="laboratory">Laboratory Equipment</option>
+                                <option value="operating">Operating Equipment</option>
+                                <option value="surgical">Surgical Equipment</option>
+                                <option value="sterilisation">Sterilisation Equipment</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-sku">SKU</label>
+                            <input type="text" id="product-sku" name="product-sku" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product-price">Price ($)</label>
+                            <input type="number" id="product-price" name="product-price" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-stock">Stock Quantity</label>
+                            <input type="number" id="product-stock" name="product-stock" min="0" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-description">Description</label>
+                        <textarea id="product-description" name="product-description" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-features">Features (one per line)</label>
+                        <textarea id="product-features" name="product-features" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-image">Product Image</label>
+                        <input type="file" id="product-image" name="product-image" accept="image/*">
+                        <div class="image-preview" id="image-preview"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product-status">Status</label>
+                            <select id="product-status" name="product-status" required>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="discontinued">Discontinued</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-featured">Featured Product</label>
+                            <select id="product-featured" name="product-featured">
+                                <option value="no">No</option>
+                                <option value="yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancel-add-product">Cancel</button>
+                <button class="btn btn-primary" id="save-product">Save Product</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="admin-script.js"></script>
+</body>
+
+</html>
