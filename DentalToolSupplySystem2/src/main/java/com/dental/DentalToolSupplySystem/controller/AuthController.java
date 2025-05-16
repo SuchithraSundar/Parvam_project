@@ -15,7 +15,22 @@ public class AuthController {
 
     @Autowired
     private UserService userService;
-
+    
+    @GetMapping({"/",""})
+    public String home() {
+        return "home";
+    }
+    
+    @GetMapping("/about")
+    public String about() {
+        return "about";
+    }
+    
+    @GetMapping("/contact")
+    public String contact() {
+        return "contact";
+    }
+    
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
         model.addAttribute("user", new User());
