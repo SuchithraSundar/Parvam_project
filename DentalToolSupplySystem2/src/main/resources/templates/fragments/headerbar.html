@@ -1,0 +1,15 @@
+ <!-- Header -->
+  <header th:fragment="headerbar">
+    <div class="logo">
+      <img src="/images/index/logo1.png" alt="Logo" /><span>DentalTech</span>
+    </div>
+    <div class="search-container">
+      <input type="text" placeholder="Search" />
+      <button><i class="fas fa-search"></i> Search</button>
+    </div>
+      <a th:href="@{/cart}" class="text-decoration-none text-dark">
+	  <div class="cart">
+	    <i class="fas fa-shopping-cart"></i> Cart
+	  </div>
+	</a>
+  </header>
