@@ -1,19 +1,7 @@
-package com.dental.DentalToolSupplySystem.model;
+package com.dental.DentalToolSupplySystem.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "Users")
-
-public class DentalTool {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+public class DentalToolDTO {
+	
 	private String firstname;
 	private String lastname;
 	private String dob;
@@ -22,88 +10,55 @@ public class DentalTool {
 	private String password;
 	private String confirmpassword;
 	
-	//no args
-	public DentalTool() {
-		super();
-	}
-
-	//full args
-	public DentalTool(long id, String firstname, String lastname, String dob, String gender, String email,
-			String password, String confirmpassword) {
-		super();
-		this.id = id;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.dob = dob;
-		this.gender = gender;
-		this.email = email;
-		this.password = password;
-		this.confirmpassword = confirmpassword;
-	}
-
-	//getters and setters
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
+	// getters and setters
 	public String getFirstname() {
 		return firstname;
 	}
-
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
-
 	public String getLastname() {
 		return lastname;
 	}
-
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-
 	public String getDob() {
 		return dob;
 	}
-
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
-
 	public String getGender() {
 		return gender;
 	}
-
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-
 	public String getEmail() {
 		return email;
 	}
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 	public String getPassword() {
 		return password;
 	}
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 	public String getConfirmpassword() {
 		return confirmpassword;
 	}
-
 	public void setConfirmpassword(String confirmpassword) {
 		this.confirmpassword = confirmpassword;
+	}
+	
+	//tostring
+	@Override
+	public String toString() {
+		return "DentalToolDTO [firstname=" + firstname + ", lastname=" + lastname + ", dob=" + dob + ", gender="
+				+ gender + ", email=" + email + ", password=" + password + ", confirmpassword=" + confirmpassword + "]";
 	}
 	
 	
