@@ -1,4 +1,4 @@
-<script>
+
     document.addEventListener('DOMContentLoaded', function () {
       // Quantity controls
       const minusButtons = document.querySelectorAll('.quantity-btn.minus');
@@ -96,4 +96,3 @@
         });
       });
     });
-  </script>
