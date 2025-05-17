@@ -18,6 +18,8 @@
     --error-color: #f44336;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
+      --color:#30b3b3;
+    --bg:#2aa99f;
 }
 
 /* Page Header */
@@ -42,7 +44,7 @@
 }
 
 .breadcrumb a {
-    color: var(--primary-color);
+    color: #f3effa;
     transition: var(--transition);
 }
 

@@ -13,9 +13,9 @@
     --error-color: #f44336;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
-    --color:#30b3b3;
+  --color:#30b3b3;
     --bg:#2aa99f;
-}
+    }
 
 
 * {
@@ -181,12 +181,12 @@ nav ul li a.active {
 .hero h1 {
     font-size: 36px;
     margin-bottom: 20px;
-    color: var(--accent-color);
+    color: #f8f9fa;
 }
 
 .hero p {
     font-size: 18px;
-    color: var(--light-text);
+    color: #f3effa;
     max-width: 700px;
     margin: 0 auto 30px;
 }

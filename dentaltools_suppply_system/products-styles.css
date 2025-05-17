@@ -2,7 +2,7 @@
 
 /* Variables - Using lavender color scheme */
 :root {
-     --primary-color:  #7ad2bd;
+    --primary-color: #7ad2bd;
     --secondary-color: #b7eae6;
     --accent-color: hsl(151, 53%, 35%);
     --light-lavender: #f3effa;
@@ -18,12 +18,12 @@
     --error-color: #f44336;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
-    --color:#004d4d;
+    --color: #004d4d;
 }
 
 /* Products Hero Section */
 .products-hero {
-    background-image: linear-gradient(to right, rgba(22, 112, 41, 0.9), rgba(48, 122, 84, 0.8)),
+    background-image: linear-gradient(to right, rgba(110, 198, 129, 0.9), rgba(75, 173, 122, 0.8)),
         url("/placeholder.svg?height=600&width=1200");
     background-size: cover;
     background-position: center;
@@ -105,7 +105,7 @@
     right: 5px;
     top: 50%;
     transform: translateY(-50%);
-    background-color:var(--color);
+    background-color: var(--color);
     color: var(--white);
     border: none;
     width: 40px;
@@ -455,7 +455,7 @@
 
 .page-link:hover,
 .page-link.active {
-    background-color:var(--color);
+    background-color: var(--color);
     color: var(--white);
 }
 
@@ -463,10 +463,11 @@
     margin: 0 5px;
 }
 
-.cta{
+.cta {
     text-align: center;
     margin-top: 30px;
 }
+
 /* Featured Brands */
 .featured-brands {
     padding: 60px 0;
@@ -497,7 +498,7 @@
     align-items: center;
     justify-content: center;
     padding: 15px;
-    
+
 }
 
 .brand-logo:hover {

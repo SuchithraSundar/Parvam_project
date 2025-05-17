@@ -18,11 +18,13 @@
     --error-color: #f44336;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
+      --color:#30b3b3;
+    --bg:#2aa99f;
 }
 
 /* Products Hero Section */
 .products-hero {
-    background-image: linear-gradient(to right, rgba(142, 109, 189, 0.9), rgba(94, 53, 177, 0.8)),
+    background-image: linear-gradient(to right, rgba(0, 128, 128, 1), rgba(170, 238, 238, 1)),
         url("/placeholder.svg?height=600&width=1200");
     background-size: cover;
     background-position: center;

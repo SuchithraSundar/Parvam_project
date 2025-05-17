@@ -18,6 +18,8 @@
     --info-color: #2196f3;
     --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
+      --color:#30b3b3;
+    --bg:#2aa99f;
 }
 
 * {
