@@ -1,9 +1,14 @@
 package com.dental.DentalToolSupplySystem.service;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
 import com.dental.DentalToolSupplySystem.dto.DentalToolDTO;
 import com.dental.DentalToolSupplySystem.model.DentalTool;
 import com.dental.DentalToolSupplySystem.repository.DentalToolRepository;
 
+
+@Service
 public class DentalToolSevice {
 
 		private DentalToolRepository dentaltoolRepository;
@@ -15,13 +20,34 @@ public class DentalToolSevice {
 			this.passwordEncoder = passwordEncoder;
 		}
 		
-		public void storeDentalTool(DentalToolDTO dentaltoolDTO) throws MessagingException {
+		public void storeUser(DentalToolDTO dentaltoolDTO)
+		{
 			DentalTool dental = new DentalTool();
 
-			dental.setName(dentaltoolDTO.getName());
+			dental.setFirstname(dentaltoolDTO.getFirstname());
+			dental.setLastname(dentaltoolDTO.getLastname());
 			dental.setEmail(dentaltoolDTO.getEmail());
-			dental.setPassword(passwordEncoder.encode(studentDTO.getPassword()));
-			dental.setRole("ROLE_USER");
+			dental.setDob(dentaltoolDTO.getDob());
+			dental.setGender(dentaltoolDTO.getGender());
+			dental.setPassword(passwordEncoder.encode(dentaltoolDTO.getPassword()));
+			dental.setConfirmpassword(dentaltoolDTO.getConfirmpassword());
+//			if (dentaltoolDTO.getRole() != null && 
+//			        (dentaltoolDTO.getRole().equals("ROLE_ADMIN") || dentaltoolDTO.getRole().equals("ROLE_SUPPLIER") || dentaltoolDTO.getRole().equals("ROLE_USER"))) {
+//			        dental.setRole(dentaltoolDTO.getRole());
+//			    } else {
+//			        dental.setRole("ROLE_USER"); 
+//			    }
+			System.out.println("role: "+dentaltoolDTO.getRole());
+			if(dentaltoolDTO.getRole().equals("") || dentaltoolDTO.getRole().equals(null)) {
+				dental.setRole("ROLE_USER"); 
+			}
+			else {
+				dental.setRole(dentaltoolDTO.getRole());
+			}
+		dentaltoolRepository.save(dental);
+			
 			dentaltoolRepository.save(dental);
 		}
+
+		
 }

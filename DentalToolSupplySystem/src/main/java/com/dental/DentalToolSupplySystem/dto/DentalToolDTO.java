@@ -1,14 +1,17 @@
 package com.dental.DentalToolSupplySystem.dto;
 
+import java.time.LocalDate;
+
 public class DentalToolDTO {
 	
 	private String firstname;
 	private String lastname;
-	private String dob;
+	private LocalDate dob;
 	private String gender;
 	private String email;
 	private String password;
 	private String confirmpassword;
+	private String role;
 	
 	// getters and setters
 	public String getFirstname() {
@@ -23,10 +26,10 @@ public class DentalToolDTO {
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-	public String getDob() {
+	public LocalDate getDob() {
 		return dob;
 	}
-	public void setDob(String dob) {
+	public void setDob(LocalDate dob) {
 		this.dob = dob;
 	}
 	public String getGender() {
@@ -54,11 +57,19 @@ public class DentalToolDTO {
 		this.confirmpassword = confirmpassword;
 	}
 	
+	
+	
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 	//tostring
 	@Override
 	public String toString() {
 		return "DentalToolDTO [firstname=" + firstname + ", lastname=" + lastname + ", dob=" + dob + ", gender="
-				+ gender + ", email=" + email + ", password=" + password + ", confirmpassword=" + confirmpassword + "]";
+				+ gender + ", email=" + email + ", password=" + password + ", confirmpassword=" + confirmpassword + ",role="+ role +"]";
 	}
 	
 	

@@ -20,7 +20,7 @@
 
 <body>
 
-  <section>
+  
 
 
 
@@ -38,25 +38,33 @@
 <!-- Login Form Section -->
 <section class="container my-5">
 
+	<div th:if="${param.logout}" class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+		  You have been logged out successfully.
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	<div th:if="${success}" class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+			  <span th:text="${success}"></span>
+			  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+			
   <div class="row justify-content-center">
     <div class="col-md-6">
 
       <!-- Bold Login Header -->
       <h2 class="text-center mb-4 fw-bold">Login account</h2>
 
-     <form th:action="@{/login}" method="post">
-
+     <form th:action="@{/login}" method="POST"> 
         <!-- Email Input -->
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Email" required>
+          <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
         </div>
 
         <!-- Password Input with Eye Icon -->
         <div class="mb-3 position-relative">
           <label for="password" class="form-label">Password</label>
           <div class="input-group">
-            <input type="password" class="form-control" id="password" placeholder="Password" required>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
             <span class="input-group-text" onclick="togglePassword()" style="cursor: pointer;">
               <i class="fa-regular fa-eye" id="togglePasswordIcon"></i>
             </span>
@@ -86,7 +94,7 @@
 
 
 <!-- Footer Section -->
-</section>
+
 
  
 </body>

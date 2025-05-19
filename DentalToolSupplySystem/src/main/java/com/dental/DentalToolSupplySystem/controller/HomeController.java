@@ -1,13 +1,28 @@
 package com.dental.DentalToolSupplySystem.controller;
 
 import org.springframework.stereotype.Controller;
-
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.dental.DentalToolSupplySystem.dto.DentalToolDTO;
+import com.dental.DentalToolSupplySystem.service.DentalToolSevice;
+
 
 
 @Controller
 public class HomeController {
 	
+	private DentalToolSevice dentaltoolSevice;
+	
+
+	public HomeController(DentalToolSevice dentaltoolSevice) {
+		super();
+		this.dentaltoolSevice = dentaltoolSevice;
+	}
+
 	@GetMapping("/")
 	public String home() {
 	return "index";
@@ -19,8 +34,18 @@ public class HomeController {
 	}
 
 	@GetMapping("/register")
-	public String register() {
+	public String register(Model model) {
+		DentalToolDTO dentaltoolDTO = new DentalToolDTO();
+		model.addAttribute("dentaltoolDTO",dentaltoolDTO);
 		return "register";
+	}
+	
+	@PostMapping("/register")
+	public String register(@ModelAttribute DentalToolDTO dentaltoolDTO, RedirectAttributes redirectAttributes) {
+			System.out.println(dentaltoolDTO);
+			dentaltoolSevice.storeUser(dentaltoolDTO);
+			redirectAttributes.addFlashAttribute("success","user saved succesfully");
+			return "redirect:/login";
 	}
 
 	@GetMapping("/forgetpassword")
@@ -63,12 +88,12 @@ public class HomeController {
 		return "terms_conditions";
 	}
 	
-	
-	
-	
-	
-	
-	
+	@GetMapping("/admin_dashboard")
+	public String admin_dashboard() {
+		return "admin_dashboard";
+	}
+
+		
 
 }
 

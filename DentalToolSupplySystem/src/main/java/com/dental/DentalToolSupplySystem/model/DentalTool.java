@@ -1,5 +1,8 @@
 package com.dental.DentalToolSupplySystem.model;
 
+import java.time.LocalDate;
+
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,11 +19,12 @@ public class DentalTool {
 	private long id;
 	private String firstname;
 	private String lastname;
-	private String dob;
+	private LocalDate dob;
 	private String gender;
 	private String email;
 	private String password;
 	private String confirmpassword;
+	private String role;
 	
 	//no args
 	public DentalTool() {
@@ -28,8 +32,8 @@ public class DentalTool {
 	}
 
 	//full args
-	public DentalTool(long id, String firstname, String lastname, String dob, String gender, String email,
-			String password, String confirmpassword) {
+	public DentalTool(long id, String firstname, String lastname, LocalDate dob, String gender, String email,
+			String password, String confirmpassword , String role) {
 		super();
 		this.id = id;
 		this.firstname = firstname;
@@ -39,6 +43,7 @@ public class DentalTool {
 		this.email = email;
 		this.password = password;
 		this.confirmpassword = confirmpassword;
+		this.role =role;
 	}
 
 	//getters and setters
@@ -66,11 +71,11 @@ public class DentalTool {
 		this.lastname = lastname;
 	}
 
-	public String getDob() {
+	public LocalDate getDob() {
 		return dob;
 	}
 
-	public void setDob(String dob) {
+	public void setDob(LocalDate dob) {
 		this.dob = dob;
 	}
 
@@ -105,6 +110,26 @@ public class DentalTool {
 	public void setConfirmpassword(String confirmpassword) {
 		this.confirmpassword = confirmpassword;
 	}
+	
+	
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	@Override
+	public String toString() {
+		return "DentalTool [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", dob=" + dob
+				+ ", gender=" + gender + ", email=" + email + ", password=" + password + ", confirmpassword="
+				+ confirmpassword + ", role=" + role + "]";
+	}
+	
+	
+	
 	
 	
 	
