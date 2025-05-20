@@ -50,16 +50,15 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		return http
 				.authorizeHttpRequests(auth-> auth
-						//.requestMatchers("/user").hasRole("USER") 
-						.requestMatchers("/admin_dashboard","/products","/categories","/cart","/checkouts").hasRole("ADMIN")
-						.requestMatchers("/products").hasAnyRole("ADMIN","USER","SUPPLIER")
-						.requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**","/","/about","/register","/products","/contact").permitAll()
+						.requestMatchers("/admin_dashboard").hasRole("ADMIN")
+//						.requestMatchers("/products").hasAnyRole("ADMIN", "USER", "SUPPLIER")
+						.requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**","/","/about","/register","/contact","/categories","/cart","/checkouts","/products").permitAll()
 						.anyRequest().authenticated()
 						)
 				.formLogin(login -> login
 						.loginPage("/login")
 						.loginProcessingUrl("/login")
-//						.usernameParameter("email")
+						.usernameParameter("email")
 						.successHandler(customSuccessHandler)
 						.permitAll()
 						)

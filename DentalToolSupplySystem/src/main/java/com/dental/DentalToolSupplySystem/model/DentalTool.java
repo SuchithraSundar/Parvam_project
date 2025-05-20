@@ -17,13 +17,9 @@ public class DentalTool {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	private String firstname;
-	private String lastname;
-	private LocalDate dob;
-	private String gender;
+	private String name;
 	private String email;
 	private String password;
-	private String confirmpassword;
 	private String role;
 	
 	//no args
@@ -31,22 +27,15 @@ public class DentalTool {
 		super();
 	}
 
-	//full args
-	public DentalTool(long id, String firstname, String lastname, LocalDate dob, String gender, String email,
-			String password, String confirmpassword , String role) {
+	public DentalTool(long id, String name, String email, String password, String role) {
 		super();
 		this.id = id;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.dob = dob;
-		this.gender = gender;
+		this.name = name;
 		this.email = email;
 		this.password = password;
-		this.confirmpassword = confirmpassword;
-		this.role =role;
+		this.role = role;
 	}
 
-	//getters and setters
 	public long getId() {
 		return id;
 	}
@@ -55,36 +44,12 @@ public class DentalTool {
 		this.id = id;
 	}
 
-	public String getFirstname() {
-		return firstname;
+	public String getName() {
+		return name;
 	}
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-
-	public String getLastname() {
-		return lastname;
-	}
-
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-
-	public LocalDate getDob() {
-		return dob;
-	}
-
-	public void setDob(LocalDate dob) {
-		this.dob = dob;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {
@@ -103,16 +68,6 @@ public class DentalTool {
 		this.password = password;
 	}
 
-	public String getConfirmpassword() {
-		return confirmpassword;
-	}
-
-	public void setConfirmpassword(String confirmpassword) {
-		this.confirmpassword = confirmpassword;
-	}
-	
-	
-
 	public String getRole() {
 		return role;
 	}
@@ -123,11 +78,10 @@ public class DentalTool {
 
 	@Override
 	public String toString() {
-		return "DentalTool [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", dob=" + dob
-				+ ", gender=" + gender + ", email=" + email + ", password=" + password + ", confirmpassword="
-				+ confirmpassword + ", role=" + role + "]";
+		return "DentalTool [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role="
+				+ role + "]";
 	}
-	
+
 	
 	
 	

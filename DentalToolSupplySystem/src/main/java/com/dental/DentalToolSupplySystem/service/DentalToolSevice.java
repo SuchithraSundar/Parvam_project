@@ -24,13 +24,10 @@ public class DentalToolSevice {
 		{
 			DentalTool dental = new DentalTool();
 
-			dental.setFirstname(dentaltoolDTO.getFirstname());
-			dental.setLastname(dentaltoolDTO.getLastname());
+			dental.setName(dentaltoolDTO.getName());
 			dental.setEmail(dentaltoolDTO.getEmail());
-			dental.setDob(dentaltoolDTO.getDob());
-			dental.setGender(dentaltoolDTO.getGender());
+			System.out.println(dentaltoolDTO.getPassword());
 			dental.setPassword(passwordEncoder.encode(dentaltoolDTO.getPassword()));
-			dental.setConfirmpassword(dentaltoolDTO.getConfirmpassword());
 //			if (dentaltoolDTO.getRole() != null && 
 //			        (dentaltoolDTO.getRole().equals("ROLE_ADMIN") || dentaltoolDTO.getRole().equals("ROLE_SUPPLIER") || dentaltoolDTO.getRole().equals("ROLE_USER"))) {
 //			        dental.setRole(dentaltoolDTO.getRole());
